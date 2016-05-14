@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>Directorio Vecinal</title>
+    <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
+    <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" id="fontFamilySrc" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735249/style.min.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+  
+  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735472/jquery.gritter.css" rel="stylesheet" />    
+  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+    
+    <!-- common styles -->
+    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog.css" />
+    <!-- individual effect -->
+    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog-cathy.css" />
+    <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
+  </head>
+<style type="text/css">
+    body{
+      background-color: white!important;
+      color: #cccccc;
+    }
+    button.trigger {
+    background: hsl(359, 53%, 55%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    }
+
+    button {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    background: hsl(359, 53%, 55%);
+}
+
+.dialog h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 2em;
+    padding: 0 0 .5em; 
+    margin: 0;
+}
+
+input[type=submit] {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    background: hsl(359, 53%, 55%);
+}
+
+input[type=text] {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    background: hsl(359, 53%, 55%);
+}
+th, td{
+  color: black;
+}
+button.trigger {
+    background: hsl(359, 53%, 55%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.page-header-fixed {
+    padding-top: 0px;
+}
+    .visible{
+        display: none;
+    }
+    a.font{
+      font-size: 16px;
+    }
+    .font{
+      font-size: 16px;
+    }
+    .verde{
+      color: #00A896;
+    }
+    .subtitle{
+        /* Good: */
+        font-family: .AppleSystemUIFont;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .panel.panel-success .panel-heading{
+        margin-top: 10px;
+    }
+    .empresa{
+        font-family: .AppleSystemUIFont;
+    }
+    .btn.btn-warning{
+        margin-bottom: 10px;
+    }
+    .circle-red{
+        color: hsl(2, 85%, 61%);
+    }
+    .circle-green{
+        color: hsl(126, 45%, 58%);
+    }
+    .circle-yellow{
+        color: hsl(35, 97%, 62%);
+    }
+    #flotante{  /*padre*/
+    
+    width: 100%; 
+    height: 100%;
+    }
+    #flotante .A{  /*hijos*/
+    display: inline-block;
+    margin-left: 20px;
+    }
+     #flotante .B{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 0px!important;
+     }
+    #flotante .c{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+     #flotante .d{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+     #flotante .e{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+    .oculto{
+      display: none;
+    }
+    .mostrar{
+    font-size: 21px;
+    font-weight: bold;
+    }
+ 
+    strong {
+    font-family: Nunito,sans-serif;
+    margin-left: 15px;
+    font-weight: 100;
+    cursor:pointer;
+    }
+    
+    .sidebar .sub-menu{
+      background-color: #2F223D;
+    }
+    .sidebar{
+     background-color: #2F223D;
+    }
+
+    .blanco{
+      color: #E8E8ED!important;
+      text-overflow:ellipsis!important;
+      white-space:nowrap; 
+      overflow:hidden; 
+
+    }
+    a.blanco{
+      text-decoration: none;
+      background: transparent;
+    }
+    #search{
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      width: 90%;
+      color: #36213E;
+      background:hsl(210, 5%, 93%);
+      text-transform: lowercase; 
+    }
+
+.panel.panel-inverse .panel-heading {
+    background: #554971;
+    color: hsl(0, 0%, 100%);
+}
+td.blanco{
+  width: 300px;
+  
+  padding:2%;
+}
+td.blanco:hover{
+  background-color: #554971;
+}
+</style>
+  <body data-no-turbolink data-no-transition-cache>
+     <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
+    
+  <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
+    <!-- begin #header -->
+    <div id="header" class="header navbar navbar-default navbar-fixed-top">
+      <!-- begin container-fluid -->
+      <div class="container-fluid">
+        <!-- begin mobile sidebar expand / collapse button -->
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">
+                        bikina
+
+                    </a>
+          <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- end mobile sidebar expand / collapse button -->
+        
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <form class="navbar-form form-input-flat">
+
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Buscar...">
+                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </li>
+              <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="image"><%= image_tag("http://res.cloudinary.com/vianse/" + Perfil.where(:user_id => current_user.id).pluck(:photo).first, size: "40") %></span>
+                          <span class="hidden-xs">
+                        
+                            <strong><%= current_user.email %></strong></span> 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="/users/edit">Seguridad</a></li>
+                          <li class="divider"></li>
+                          <li><%= link_to 'Editar perfil', edit_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first), :class => 'navbar-link' %></li>
+                          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
+                        </ul>
+              </li>
+        </ul>
+
+        <!-- end navbar-right -->
+      </div>
+      <!-- end container-fluid -->
+    </div>
+    <div id="sidebar" class="sidebar">
+      <!-- begin sidebar scrollbar -->
+      <div data-scrollbar="true" data-height="100%">
+        <!-- begin sidebar nav -->
+
+        <ul class="nav">
+    
+          <li class="nav-header">Tus Directorios</li>
+          <li class="has-sub active">
+              <ul class="" style="padding-left: 0px;">
+                <table >
+                  <thead>
+                  <tr>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="blanco">                  
+                      <strong><%= link_to 'Regresar', url_for(:back), :class=>"blanco" %></strong>
+                     </td>
+                     </tr>
+                  </tbody>
+                </table>       
+                                    
+              </ul>
+          </li>
+        </ul>
+        <!-- end sidebar nav -->
+      </div>
+      <!-- end sidebar scrollbar -->
+    </div>
+    <!-- end #sidebar -->
+    <div id="content" class="content">
+              <h1 class="page-header">
+                <span class="empresa"> 
+                      
+
+        <div id="somedialog" class="dialog">
+          <div class="dialog__overlay"></div>
+          <div class="dialog__content">
+            <h2>Crear un directorio</h2>
+            
+            <%= form_for(@grupo) do |f| %>
+                <% if @grupo.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this grupo from being saved:</h2>
+
+                    <ul>
+                    <% @grupo.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.label "Escribe brevemente un nombre para tu directorio" %><br>
+                  <%= f.text_field :nombre %>
+                </div>
+                <div class="field">
+                  <%= f.hidden_field :user_id, :value => current_user.id %>
+                </div>
+                <div class="field">
+                  <%= f.hidden_field :clave, :value => rand(5..100000000) %>
+                </div>
+                <div class="actions">
+                  <%= f.submit "Crear", :class=>"action" %>
+                  
+                </div>
+              <% end %>
+            <div>
+          </div>
+        </div>
+
+         <div id="somedialog1" class="dialog">
+          <div class="dialog__overlay"></div>
+          <div class="dialog__content">
+            <h2>Unirse a un directorio</h2><div><button class="action" data-dialog-close>Close</button></div>
+          </div>
+        </div>
+
+                </span>
+              </h1>
+              <!-- end page-header -->
+               <div class="panel panel-inverse">
+                            <div class="panel-body">
+                                <div class="row"> 
+                                    <h2>Detalles del directorio</h2>
+                                    <h4><%= @nombre %></h4>
+                                    <h4><%= @descripcion %></h4><br>
+                                    <%= form_for(@unir) do |f| %>
+                									  <% if @unir.errors.any? %>
+                									    <div id="error_explanation">
+                									      <h2><%= pluralize(@unir.errors.count, "error") %> prohibited this unir from being saved:</h2>
+
+                									      <ul>
+                									      <% @unir.errors.full_messages.each do |message| %>
+                									        <li><%= message %></li>
+                									      <% end %>
+                									      </ul>
+                									    </div>
+                									  <% end %>
+
+                  									  <div class="field">
+                  									    <%= f.hidden_field :grupo_id, :value => params[:clave] %>
+                  									  </div>
+                  									  <div class="field">
+                  									    <%= f.hidden_field :user_id,:value=>current_user.id %>
+                  									  </div>
+                  									  <div class="actions">
+                  									    <%= f.submit"Unirme a este directorio", :class=> "pulse"%>
+                  									  </div>
+                  									<% end %>
+                                </div>
+                            </div>
+               </div>  
+               <!-- table -->
+               <!-- footer -->
+               <div id="footer" class="footer">
+                  <span class="pull-right">
+                      <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                          <i class="fa fa-arrow-up"></i> <span class="hidden-xs">Back to Top</span>
+                      </a>
+                  </span>
+                  &copy; 2016 All Right Reserved
+               </div>
+    </div>
+  </div>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732895/jquery-1.9.1.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733033/jquery-migrate-1.1.0.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733159/jquery-ui.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733251/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+  <![endif]-->
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733489/jquery.cookie.js"></script>
+  <!-- ================== END BASE JS ================== -->
+  
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733913/bootstrap_calendar.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733996/jquery.sparkline.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734296/jquery.gritter.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734361/page-index.demo.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733809/demo.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732638/apps.js"></script>
+
+  <!-- ================== END PAGE LEVEL JS ================== -->
+  
+  <script>
+    $(document).ready(function() {
+        App.init();
+        Demo.init();
+        //PageDemo.init();
+    });
+  </script>
+  <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/classie.js"></script>
+    <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/dialogFx.js"></script>
+    <script>
+      (function() {
+
+        var dlgtrigger = document.querySelector( '[data-dialog]' ),
+          somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
+          dlg = new DialogFx( somedialog );
+        dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
+      })();
+
+    </script>
+     
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+<script src="https://rawgit.com/arqex/react-json/master/build/Json.js"></script>
+<script src="//cdn.jsdelivr.net/refluxjs/0.2.11/reflux.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/jsx">
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+
+var query = getUrlParameter('q');
+var url = "api/v1/directorios?q="
+var Directorios = React.createClass({
+    componentDidMount: function() {
+      $.ajax({
+            url: url ,
+            dataType: 'json',
+            success: function(data) {
+              this.setState({data: data});
+            }.bind(this)
+      });
+    
+    },
+    
+    getInitialState: function() {
+              return {
+                data: [],
+                value: ''
+   
+        }
+            },
+    handleChange: function(event) {
+       this.setState({value: event.target.value.substr(0, 140)});
+       $.ajax({
+            url: url + this.state.value,
+            dataType: 'json',
+            success: function(data) {
+              this.setState({data: data});
+            }.bind(this)
+      });
+      },
+    render: function() {   
+
+            var subir = items
+            var items = this.state.data.map(function(object){
+              return <tr>
+                     <td className="blanco">                  
+                      <strong><a href="/unirs/new" className="blanco">#{object.nombre}</a></strong>
+                    
+                     </td>
+                     
+                     </tr>
+                     
+              });
+                
+            return <div>
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+                className="form-control"
+                placeholder="Buscar directorio"
+                id="search"/>
+                
+                <table>
+                  <thead>
+                  <tr>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {items}
+                  </tbody>
+                </table>
+                </div>
+      
+          }
+    });
+    
+    React.render(
+          <Directorios />,
+     document.getElementById('resultado')
+     );
+
+</script>
+  </body>
+</html>

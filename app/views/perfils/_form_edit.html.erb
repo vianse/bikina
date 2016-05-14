@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <title>Directorio Vecinal</title>
+    <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
+    <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" id="fontFamilySrc" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735249/style.min.css" rel="stylesheet" />
+  <!-- ================== END BASE CSS STYLE ================== -->
+  
+  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735472/jquery.gritter.css" rel="stylesheet" />    
+  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+    
+    <!-- common styles -->
+    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog.css" />
+    <!-- individual effect -->
+    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog-cathy.css" />
+    <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
+  </head>
+<style type="text/css">
+    body{
+      background-color: white!important;
+      color: #cccccc;
+    }
+    button.trigger {
+    background: hsl(359, 53%, 55%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    }
+
+    button {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    background: hsl(359, 53%, 55%);
+}
+
+.dialog h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 2em;
+    padding: 0 0 .5em; 
+    margin: 0;
+}
+
+input[type=submit] {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    background: hsl(359, 53%, 55%);
+}
+
+input[type=text] {
+    padding: 1em 2em;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    color: hsl(0, 0%, 39%);
+    background: hsl(0, 0%, 91%);
+    width: 50%;
+}
+th, td{
+  color: black;
+}
+button.trigger {
+    background: hsl(359, 53%, 55%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.page-header-fixed {
+    padding-top: 0px;
+}
+    .visible{
+        display: none;
+    }
+    a.font{
+      font-size: 16px;
+    }
+    .font{
+      font-size: 16px;
+    }
+    .verde{
+      color: #00A896;
+    }
+    .subtitle{
+        /* Good: */
+        font-family: .AppleSystemUIFont;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .panel.panel-success .panel-heading{
+        margin-top: 10px;
+    }
+    .empresa{
+        font-family: .AppleSystemUIFont;
+    }
+    .btn.btn-warning{
+        margin-bottom: 10px;
+    }
+    .circle-red{
+        color: hsl(2, 85%, 61%);
+    }
+    .circle-green{
+        color: hsl(126, 45%, 58%);
+    }
+    .circle-yellow{
+        color: hsl(35, 97%, 62%);
+    }
+    #flotante{  /*padre*/
+    
+    width: 100%; 
+    height: 100%;
+    }
+    #flotante .A{  /*hijos*/
+    display: inline-block;
+    margin-left: 20px;
+    }
+     #flotante .B{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 0px!important;
+     }
+    #flotante .c{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+     #flotante .d{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+     #flotante .e{
+    display: inline-block;
+    margin-left: 50px;
+   
+     }
+    .oculto{
+      display: none;
+    }
+    .mostrar{
+    font-size: 21px;
+    font-weight: bold;
+    }
+ 
+    strong {
+    font-family: Nunito,sans-serif;
+    margin-left: 15px;
+    font-weight: 100;
+    cursor:pointer;
+    }
+    
+    .sidebar .sub-menu{
+      background-color: #2F223D;
+    }
+    .sidebar{
+     background-color: #2F223D;
+    }
+
+    .blanco{
+      color: #E8E8ED!important;
+      text-overflow:ellipsis!important;
+      white-space:nowrap; 
+      overflow:hidden; 
+
+    }
+    a.blanco{
+      text-decoration: none;
+      background: transparent;
+    }
+    #search{
+      margin-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 5%;
+      width: 90%;
+      color: #36213E;
+      background:hsl(210, 5%, 93%);
+      text-transform: lowercase; 
+    }
+
+.panel.panel-inverse .panel-heading {
+    background: #554971;
+    color: hsl(0, 0%, 100%);
+}
+td.blanco{
+  width: 300px;
+  
+  padding:2%;
+}
+td.blanco:hover{
+  background-color: #554971;
+}
+</style>
+  <body data-no-turbolink data-no-transition-cache>
+     <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
+    
+  <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
+    <!-- begin #header -->
+    <div id="header" class="header navbar navbar-default navbar-fixed-top">
+      <!-- begin container-fluid -->
+      <div class="container-fluid">
+        <!-- begin mobile sidebar expand / collapse button -->
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">
+                      bikina 
+
+                    </a>
+          <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- end mobile sidebar expand / collapse button -->
+        
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            
+          </li>
+              <li class="dropdown navbar-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="image"><%= image_tag("http://res.cloudinary.com/vianse/" + Perfil.where(:user_id => current_user.id).pluck(:photo).first, size: "40") %></span>
+                          <span class="hidden-xs">
+
+                            <strong><%= current_user.email %></strong></span> 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                          <li><a href="/users/edit">Seguridad</a></li>
+                          <li class="divider"></li>
+                          <li><%= link_to 'Editar perfil', edit_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first), :class => 'navbar-link' %></li>
+                          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
+                        </ul>
+              </li>
+        </ul>
+
+        <!-- end navbar-right -->
+      </div>
+      <!-- end container-fluid -->
+    </div>
+    <div id="sidebar" class="sidebar">
+      <!-- begin sidebar scrollbar -->
+      <div data-scrollbar="true" data-height="100%">
+        <!-- begin sidebar nav -->
+
+        <ul class="nav">
+          <li class="has-sub active">
+              <ul class="sub-menu">
+                         
+              </ul>
+          </li>
+        </ul>
+        <!-- end sidebar nav -->
+      </div>
+      <!-- end sidebar scrollbar -->
+    </div>
+    <!-- end #sidebar -->
+    <div id="content" class="content">
+              <h1 class="page-header">
+                <span class="empresa"> 
+              
+                </span>
+              </h1>
+              <!-- end page-header -->
+               <div class="panel panel-inverse">
+                    <div class="panel-body">
+                      <div class="row"> 
+                        <h2>Editar Perfil</h2>
+                           <%= form_for(@perfil) do |f| %>
+                            <% if @perfil.errors.any? %>
+                              <div id="error_explanation">
+                                <h2><%= pluralize(@perfil.errors.count, "error") %> prohibited this perfil from being saved:</h2>
+
+                                <ul>
+                                <% @perfil.errors.full_messages.each do |message| %>
+                                  <li><%= message %></li>
+                                <% end %>
+                                </ul>
+                              </div>
+                            <% end %>
+
+                            <div class="field">
+                              <h5>Ingresa tu nombre completo, este aparecera en tus servicios</h5>
+                              <%= f.text_field :nombre, :class => 'form-control', :placeholder =>"eje. Francisco Nuñez" %>
+                            </div>
+                            <h5>Foto de Perfil Actual</h5>
+                            <%= image_tag(@perfil.photo.url, size: "40") %>
+                            <div class="field">
+                              <h5>Cambiar tu foto de perfil</h5>
+                              <%= f.hidden_field :photo %>
+                              <%= f.file_field :photo,:class => 'form-control ' %>
+                              <%= f.hidden_field :remote_photo_url %>         
+                            </div>
+                            <div class="field">
+                              <%= f.hidden_field :user_id,:value => current_user.id %>
+                            </div>
+                            <div class="actions">
+                              <%= f.submit "Siguiente" %>
+                            </div>
+                          <% end %>
+
+                      </div>
+                     </div>
+               </div>  
+               <!-- table -->
+               <!-- footer -->
+               <div id="footer" class="footer">
+                  <span class="pull-right">
+                      <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                          <i class="fa fa-arrow-up"></i> <span class="hidden-xs">Back to Top</span>
+                      </a>
+                  </span>
+                  &copy; 2016 All Right Reserved
+               </div>
+    </div>
+  </div>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732895/jquery-1.9.1.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733033/jquery-migrate-1.1.0.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733159/jquery-ui.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733251/bootstrap.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="assets/crossbrowserjs/html5shiv.js"></script>
+    <script src="assets/crossbrowserjs/respond.min.js"></script>
+  <![endif]-->
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733489/jquery.cookie.js"></script>
+  <!-- ================== END BASE JS ================== -->
+  
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733913/bootstrap_calendar.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733996/jquery.sparkline.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734296/jquery.gritter.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734361/page-index.demo.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733809/demo.js"></script>
+    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732638/apps.js"></script>
+
+  <!-- ================== END PAGE LEVEL JS ================== -->
+  
+  <script>
+    $(document).ready(function() {
+        App.init();
+        Demo.init();
+        //PageDemo.init();
+    });
+  </script>
+
+  </body>
+</html>
+
+
+

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @cp.codigo %>
+</p>
+
+<p>
+  <strong>Asentamiento:</strong>
+  <%= @cp.asentamiento %>
+</p>
+
+<p>
+  <strong>Tipoasentamiento:</strong>
+  <%= @cp.tipoAsentamiento %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @cp.municipio %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @cp.estado %>
+</p>
+
+<%= link_to 'Edit', edit_cp_path(@cp) %> |
+<%= link_to 'Back', cps_path %>

@@ -1,0 +1,19 @@
+
+
+<p>
+  <strong>Photo:</strong>
+  <%= @foto.photo %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @foto.user_id %>
+</p>
+
+<p>
+  <strong>Grupo:</strong>
+  <%= @foto.grupo_id %>
+</p>
+
+<%= link_to 'Edit', edit_foto_path(@foto) %> |
+<%= link_to 'Back', fotos_path %>

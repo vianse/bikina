@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<style>
+body {
+    background-color: #2F223D;
+}
+
+#loginbox {
+    margin-top: 30px;
+}
+
+#loginbox > div:first-child {        
+    padding-bottom: 10px;    
+}
+
+.iconmelon {
+    display: block;
+    margin: auto;
+}
+
+#form > div {
+    margin-bottom: 25px;
+}
+
+#form > div:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel {    
+    background-color: transparent;
+    color: black;
+
+}
+
+.panel-body {
+    padding-top: 30px;
+    background-color: white;
+    border-radius: 5px;
+
+}
+
+#particles {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;                        
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+.iconmelon,
+.im {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: block;
+  fill: #525151;
+}
+
+.iconmelon:after,
+.im:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.panel-title,.text-center{
+  font-size: 40px;
+  color: white;
+
+
+}
+
+.panel,.panel-default{
+  border: none;
+}
+#correo{
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a{
+  text-decoration: none!important;
+}
+.nuevo{
+  color:hsl(194, 67%, 49%)!important;
+}
+</style>
+<div class="container">    
+        
+    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
+        
+        <div class="row">                
+            <div class="iconmelon">
+             
+            </div>
+        </div>
+        
+        <div class="panel panel-default" >
+            <div class="">
+                <a href="/"><div class="panel-title text-center">Bikina</div></a>
+            </div>     
+
+            <div class="panel-body" >
+             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                <%= devise_error_messages! %>
+
+                <div class="field">
+                  <%= f.label "Correo electronico" %><br />
+                  <%= f.email_field :email, autofocus: true ,:class=>"form-control"%>
+                </div>
+
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.label "Contraseña" %> <i>(dejar en blanco si no desea cambiar)</i><br />
+                  <%= f.password_field :password, autocomplete: "off" ,:class=>"form-control"%>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Confirmar contraseña" %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "off",:class=>"form-control" %>
+                </div>
+
+                <div class="field">
+                  <%= f.label "Contraseña actual" %> <i>(es necesaria para cambiar tus datos)</i><br />
+                  <%= f.password_field :current_password, autocomplete: "off",:class=>"form-control" %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit "Update",:class=>"btn btn-info" %>
+
+                  <h3>Cancelar cuenta</h3>
+
+              <p>¡dejaras un hueco enorme! <%= button_to "Cancelar mi cuenta", registration_path(resource_name),:class=>"btn btn-danger",  data: { confirm: "Estas seguro de cancelar tu cuenta?" }, method: :delete %></p>
+                </div>
+
+              <% end %>
+
+                
+
+            </div>                     
+        </div>  
+    </div>
+</div>
+

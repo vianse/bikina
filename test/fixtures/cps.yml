@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigo: MyString
+  asentamiento: MyString
+  tipoAsentamiento: MyString
+  municipio: MyString
+  estado: MyString
+
+two:
+  codigo: MyString
+  asentamiento: MyString
+  tipoAsentamiento: MyString
+  municipio: MyString
+  estado: MyString

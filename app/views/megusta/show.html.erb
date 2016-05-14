@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Megusta:</strong>
+  <%= @megustum.megusta %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @megustum.user_id %>
+</p>
+
+<p>
+  <strong>Grupo:</strong>
+  <%= @megustum.grupo_id %>
+</p>
+
+<p>
+  <strong>Registro:</strong>
+  <%= @megustum.registro_id %>
+</p>
+
+<%= link_to 'Edit', edit_megustum_path(@megustum) %> |
+<%= link_to 'Back', megusta_path %>

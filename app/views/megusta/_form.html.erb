@@ -1,0 +1,33 @@
+<%= form_for(@megustum) do |f| %>
+  <% if @megustum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@megustum.errors.count, "error") %> prohibited this megustum from being saved:</h2>
+
+      <ul>
+      <% @megustum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :megusta %><br>
+    <%= f.text_field :megusta %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :grupo_id %><br>
+    <%= f.text_field :grupo_id %>
+  </div>
+  <div class="field">
+    <%= f.label :registro_id %><br>
+    <%= f.text_field :registro_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

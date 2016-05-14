@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Unirs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grupo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unirs.each do |unir| %>
+      <tr>
+        <td><%= unir.grupo_id %></td>
+        <td><%= unir.user_id %></td>
+        <td><%= link_to 'Show', unir %></td>
+        <td><%= link_to 'Edit', edit_unir_path(unir) %></td>
+        <td><%= link_to 'Destroy', unir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unir', new_unir_path %>

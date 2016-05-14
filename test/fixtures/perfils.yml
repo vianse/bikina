@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  cp: MyString
+  colonio: MyString
+  user_id: MyString
+
+two:
+  nombre: MyString
+  cp: MyString
+  colonio: MyString
+  user_id: MyString
