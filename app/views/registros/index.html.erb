@@ -684,12 +684,14 @@ var Servicios = React.createClass({
 
                if (<%= @usuario %> == object.user_id){
                 return <tr>
+                        
                         <td><img src={i}   alt="" className="media-object img-circle" width="40" /></td>
-                        <td>{object.titulo}</td>
+                        <td><a href={h}>{object.titulo}</a></td>
                         <td>{object.descripcion}</td>
                         <td>{object.telefono1}</td>
                         <td>{object.correo}</td>
                         <td>Visitas {object.countclicks}</td>
+
                         <td><a href={h}>Detalles</a></td>
                          <td>
                           <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
@@ -703,7 +705,7 @@ var Servicios = React.createClass({
 
                 return <tr>
                         <td><img src={i}   alt="" className="media-object img-circle" width="40" /></td>
-                        <td>{object.titulo}</td>
+                        <td><a href={h}>{object.titulo}</a></td>
                         <td>{object.descripcion}</td>
                         <td>{object.telefono1}</td>
                         <td>{object.correo}</td>
