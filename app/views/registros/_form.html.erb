@@ -631,7 +631,7 @@ var Misdirectorios = React.createClass({
 
             var subir = items
             var items = this.state.data.map(function(object){
-              var link = "/registros?clave=" + object.clave + "page=1"
+              var link = "/registros?clave=" + object.clave + "&page=1"
               return <tr>
                      <td className="blanco">                  
                       <strong><a href={link} className="blanco">#{object.nombre}
