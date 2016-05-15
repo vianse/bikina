@@ -525,7 +525,7 @@ var CampoBusquedaServicios = React.createClass({
  
     render: function() {
       return (  
-        <input type="text" value={this.props.value} onChange={this.props.cambio} className="form-control" placeholder="Busca un servicio" id="busquedaservicio"/>
+        <input type="text" value={this.props.value} onChange={this.props.cambio} className="form-control" placeholder="Cual es tu necesidad? -- busca un servicio" id="busquedaservicio"/>
         
         );
       },
@@ -720,16 +720,7 @@ var Servicios = React.createClass({
               return <div>
                 <CampoBusquedaServicios value={this.state.value} cambio={this.handleChange}/>
                 <table className="table table-list-search table-td-valign-middle">
-                                            <thead>
-                                              <tr>
-                                                <th></th>
-                                                <th>Nombre del vecino</th>
-                                                <th>Habilidades o descripción</th>
-                                                <th>Telefono</th>
-                                                <th>Correo</th> 
-                                                <th colspan="3"></th>
-                                              </tr>
-                                            </thead>
+                                           
 
                                             <tbody>
                                               
