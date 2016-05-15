@@ -4,7 +4,7 @@ class Api::V1::ServicioAllController <ApplicationController
 		servicio = servicios.map do |a|
 			{
 				:img => Perfil.where(:user_id => a.user_id).pluck(:photo).first,
-				:titulo => a.titulo,
+				:titulo => Perfil.where(:user_id => a.user_id).pluck(:nombre).first,
 				:descripcion => a.descripcion,
 				:telefono1 => a.telefono1,
 				:correo => a.correo,
