@@ -377,7 +377,7 @@ h4{
           </div>
         </div>
 
-         <div id="somedialog1" class="dialog">
+         <div id="somedialog" class="dialog">
           <div class="dialog__overlay"></div>
           <div class="dialog__content">
             <h2>Unirse a un directorio</h2><div><button class="action" data-dialog-close>Close</button></div>
@@ -592,7 +592,7 @@ h4{
               </div>
                </div>  
                <!-- table -->
-               
+               <a id="single_image" href="http://res.cloudinary.com/vianse/image/upload/v1462851261/worbe/disen_o-desarrollo-web2_lempbw.jpg"><img src="http://res.cloudinary.com/vianse/image/upload/v1462851261/worbe/disen_o-desarrollo-web2_lempbw.jpg" alt=""/></a>
                <!-- footer -->
                <div id="footer" class="footer">
                   <span class="pull-right">
@@ -631,6 +631,8 @@ h4{
         App.init();
         Demo.init();
         //PageDemo.init();
+        var $= jQuery.noConflict();
+
     });
   </script>
   <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/classie.js"></script>
@@ -699,15 +701,18 @@ var Imagenes = React.createClass({
          
 
             return  <li>
+
                         <a href={object.photo.url} className="coleccion">
                         <img src={object.photo.url} alt=""/>
                         </a>
+
                     </li>
 
               });
                 
             return  <ul className="widget-gallery-list clearfix">
                       {items}
+                      
                       </ul>  
 
            
@@ -905,6 +910,7 @@ var Comentarios = React.createClass({
 
       $("#respuestas").hide();
       $("#comment").hide();
+      $("a#single_image").fancybox();
   });
 
 function respuesta(c, comentario){
