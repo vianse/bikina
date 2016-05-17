@@ -247,6 +247,9 @@ h4{
 .img-circle {
     border-radius: 20%;
 }
+.hiden{
+  display: none;
+}
 </style>
   <body data-no-turbolink data-no-transition-cache>
      <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
@@ -592,7 +595,7 @@ h4{
               </div>
                </div>  
                <!-- table -->
-               <a id="single_image" href="http://res.cloudinary.com/vianse/image/upload/v1462851261/worbe/disen_o-desarrollo-web2_lempbw.jpg"><img src="http://res.cloudinary.com/vianse/image/upload/v1462851261/worbe/disen_o-desarrollo-web2_lempbw.jpg" alt=""/></a>
+
                <!-- footer -->
                <div id="footer" class="footer">
                   <span class="pull-right">
@@ -684,36 +687,48 @@ var Imagenes = React.createClass({
       });
     
     },
+    close: function(){
+    this.setState({ showModal: "alert alert-success alert-dismissible hiden" });
+    },
+    abrir: function(e){
+      this.setState({ showModal: "alert alert-success alert-dismissible" });
+      this.setState({ image: e.target.getAttribute('id')});
+    },
     
     getInitialState: function() {
               return {
                 data: [],
-                value: ''
-   
-        }
+                value: '',
+                showModal: "alert alert-success alert-dismissible hiden",
+                image: ""
+                }
             },
 
    
     render: function() {   
 
             var subir = items
+            var e = this.abrir;
             var items = this.state.data.map(function(object){
-         
-
+              
+             
             return  <li>
-
-                        <a href={object.photo.url} className="coleccion">
-                        <img src={object.photo.url} alt=""/>
+                        
+                        <a href="#" className="coleccion" onClick={e} id={object.photo.url}>
+                        <img src={object.photo.url} alt=""  />
                         </a>
 
                     </li>
 
               });
                 
-            return  <ul className="widget-gallery-list clearfix">
+            return  <div>
+                     <ul className="widget-gallery-list clearfix">
                       {items}
-                      
                       </ul>  
+                      <Modal show={this.state.showModal} onHide={this.close} imagen={this.state.image} />
+                      </div>
+         
 
            
                   
@@ -721,11 +736,31 @@ var Imagenes = React.createClass({
           }
     });
     
+
+    var Modal = React.createClass({
+        render: function() {
+          var r = this.props.show
+          var m = this.props.imagen
+          return <div className={r} id="modal" >
+                <button type="button"
+                  className="close" onClick={this.props.onHide}>
+                  <span>&times;</span>
+                </button>
+                  <img src={m} size="600x300"/>
+              </div>;
+        }
+      });
+
+
+
     React.render(
           <Imagenes />,
           
      document.getElementById('imagenes')
      );
+
+
+
 
 
 var url_comentarios = "/api/v1/get_comentarios?id=" 
@@ -910,8 +945,10 @@ var Comentarios = React.createClass({
 
       $("#respuestas").hide();
       $("#comment").hide();
-      $("a#single_image").fancybox();
+      
+
   });
+
 
 function respuesta(c, comentario){
     $(".respuesta_valor").val(comentario);
