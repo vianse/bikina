@@ -311,7 +311,8 @@ td.blanco:hover{
         <div id="somedialog" class="dialog">
           <div class="dialog__overlay"></div>
           <div class="dialog__content">
-            <h2>Crear un directorio</h2>
+            <h2>Necesitas un directorio?</h2>
+            <p></p>
             
             <%= form_for(@grupo) do |f| %>
                 <% if @grupo.errors.any? %>
@@ -327,12 +328,12 @@ td.blanco:hover{
                 <% end %>
 
                 <div class="field">
-                  <%= f.label "Escribe brevemente un nombre para tu directorio" %><br>
-                  <%= f.text_field :nombre %>
+                  <%= f.label "Escribenos brevemente el nombre que quieres para tu directorio" %><br>
+                  <%= f.text_field :nombre ,:required => true%>
                 </div>
                 <div class="field">
-                  <%= f.label "Escribe una descripción breve para tu directorio" %><br>
-                  <%= f.text_field :descripcion %>
+                  <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
+                  <%= f.text_field :descripcion,:required => true %>
                 </div>
                 <div class="field">
                   <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -340,8 +341,9 @@ td.blanco:hover{
                 <div class="field">
                   <%= f.hidden_field :clave, :value => rand(5..100000000) %>
                 </div>
+                <p>En breve daramos de alta tu directorio</p>
                 <div class="actions">
-                  <%= f.submit "Crear", :class=>"action" %>
+                  <%= f.submit "Enviar", :class=>"action" %>
                   
                 </div>
               <% end %>
