@@ -28,6 +28,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'mailgun-ruby'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -54,5 +55,5 @@ end
 group :production do
 	gem 'pg'
 	gem 'unicorn'
-	
+
 end
