@@ -28,6 +28,14 @@ class GruposController < ApplicationController
 
     respond_to do |format|
       if @grupo.save
+  RestClient.post "https://api:key-e7d79c66e74391fdf48b657624f23ddc"\
+  "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
+  :from => "Worbe <mailgun@sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org>",
+  :to => params[:email],
+  :subject => "Curriculum Compartido",
+  :html => "El usuario #{current_user.id} solicita la creación de un nuevo directorio, acontinuación los detalles:"\
+           "Nombre: #{nombre}"\
+           "Descripcion: #{descripcion}"
         format.html { redirect_to '/', notice: 'Grupo was successfully created.' }
         format.json { render :show, status: :created, location: @grupo }
       else
