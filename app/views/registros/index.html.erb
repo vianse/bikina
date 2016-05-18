@@ -270,7 +270,7 @@ td.blanco:hover{
         <ul class="nav navbar-nav navbar-right">
           <li>
             <header class="codrops-header">
-             <div class="button-wrap"><button data-dialog="somedialog" class="trigger">Necesitas un directorio?</button></div>
+             <div class="button-wrap"><button data-dialog="somedialog" class="trigger">Necesitas un directorio vecinal?</button></div>
             </header>
             
           </li>
@@ -324,7 +324,7 @@ td.blanco:hover{
           <div id="somedialog" class="dialog">
           <div class="dialog__overlay"></div>
           <div class="dialog__content">
-            <h2>Necesitas un directorio?</h2>
+            <h2>Necesitas un directorio vecinal?</h2>
             <p></p>
             
             <%= form_for(@grupo) do |f| %>
@@ -347,6 +347,10 @@ td.blanco:hover{
                 <div class="field">
                   <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
                   <%= f.text_field :descripcion,:required => true %>
+                </div>
+                <div class="field">
+                  <%= f.label "Ingresa el Código Postal donde sera visto" %><br>
+                  <%= f.text_field :cp,:required => true %>
                 </div>
                 <div class="field">
                   <%= f.hidden_field :user_id, :value => current_user.id %>

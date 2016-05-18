@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20160505021608) do
     t.string   "user_id"
     t.string   "clave"
     t.string   "publicado"
+    t.string   "tipo"
+    t.string   "cp"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

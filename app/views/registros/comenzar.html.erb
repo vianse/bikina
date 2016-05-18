@@ -385,7 +385,7 @@ p{
         <ul class="nav navbar-nav navbar-right">
           <li>
             <header class="codrops-header">
-             <div class="button-wrap"><button data-dialog="somedialog" class="trigger">Necesitas un directorio?</button></div>
+             <div class="button-wrap"><button data-dialog="somedialog" class="trigger">Necesitas un directorio vecinal?</button></div>
             </header>
             
           </li>
@@ -435,7 +435,7 @@ p{
         <div id="somedialog" class="dialog">
           <div class="dialog__overlay"></div>
           <div class="dialog__content">
-            <h2>Necesitas un directorio?</h2>
+            <h2>Necesitas un directorio vecinal?</h2>
             <p></p>
             
             <%= form_for(@grupo) do |f| %>
@@ -458,6 +458,10 @@ p{
                 <div class="field">
                   <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
                   <%= f.text_field :descripcion,:required => true %>
+                </div>
+                <div class="field">
+                  <%= f.label "Ingresa el Código Postal donde sera visto" %><br>
+                  <%= f.text_field :cp,:required => true %>
                 </div>
                 <div class="field">
                   <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -491,7 +495,7 @@ p{
                                     
                                      <div id="resultado"></div> 
                                   
-                                     <h1>Directorios Existentes</h1>
+                                     <h1>Directorios Existentes con el código postal <%= Perfil.where(:user_id => current_user.id).pluck(:cp).first%></h1>
                                       <div id="directorios_existentes"></div>
                                
                             </div>

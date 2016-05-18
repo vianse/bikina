@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'join' => 'registros#join', as: :join
   get 'comenzar' => 'registros#comenzar', as: :comenzar
   get 'home' => 'home#index', as: :home
+  get 'perfil' => 'perfils#new', as: :profile
   #delete 'unjoin/:grupo_id' => 'registros#eliminar', :via => :delete
   get 'unjoin' => 'registros#eliminar' , as: :unjoin
   get 'delete_images' => 'registros#eliminar_imagenes' , as: :delete_images

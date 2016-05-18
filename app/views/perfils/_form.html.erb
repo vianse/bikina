@@ -294,8 +294,11 @@ td.blanco:hover{
                             <% end %>
 
                             <div class="field">
-                              <h5>Ingresa tu nombre completo, este aparecera en tus servicios</h5>
+                            <h5>Ingresa tu nombre completo, este aparecera en tus servicios</h5>
                               <%= f.text_field :nombre, :class => 'form-control', :placeholder =>"eje. Francisco Nuñez" %>
+                            </div>
+                            <h5>Ingresa tu código postal</h5>
+                              <%= f.text_field :cp, :class => 'form-control', :placeholder =>"eje. 73993" %>
                             </div>
                             <div class="field">
                               <h5>Agrega una foto de perfil</h5>

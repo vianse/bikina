@@ -6,6 +6,8 @@ class CreateGrupos < ActiveRecord::Migration
       t.string :user_id
       t.string :clave
       t.string :publicado
+      t.string :tipo
+      t.string :cp
       t.timestamps null: false
     end
   end
