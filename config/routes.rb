@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       resources :get_megusta, path: "get_megusta"
       resources :servicios, path: "servicios"
       resources :servicio_all, path: "servicio_all"
+      resources :directorios_random, path: "directorios_random"
     end
   end
    #get 'perfils/:id' => 'perfils#edit', :as => :editar_perfil

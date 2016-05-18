@@ -172,7 +172,7 @@ button.trigger {
     }
 
     .blanco{
-      color: #E8E8ED!important;
+      color: hsl(240, 0%, 51%);
       text-overflow:ellipsis!important;
       white-space:nowrap; 
       overflow:hidden; 
@@ -186,7 +186,7 @@ button.trigger {
       margin-top: 5%;
       margin-left: 5%;
       margin-right: 5%;
-      margin-bottom: 5%;
+
       width: 90%;
       color: #36213E;
       background:hsl(210, 5%, 93%);
@@ -197,13 +197,19 @@ button.trigger {
     background: #554971;
     color: hsl(0, 0%, 100%);
 }
+
 td.blanco{
   width: 300px;
-  
+  margin-left: 5%!important;
   padding:2%;
+
 }
-td.blanco:hover{
-  background-color: #554971;
+.blanco:hover{
+  color: #554971!important;
+}
+tr.blanco:hover{
+  background-color: #554971!important;
+  color: white!important;
 }
 
 .table.table-bordered>tbody>tr>td+td {
@@ -233,6 +239,125 @@ td.blanco:hover{
     opacity: .75;
 }
 
+
+h1{
+
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+  
+  span{
+    font-size: 1.4em;
+    color: @red;
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+
+p{
+  text-align: center;
+  color: #949494;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.tag-wrapper {
+  background: white;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 30px 40px;
+  text-align: center;
+ 
+}
+.tag {
+  display: inline-block;
+  position: relative;
+  margin: 5px 10px 5px 0px;
+}
+.tag input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  z-index: 300;
+  cursor: pointer;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tag a:hover + label {
+  background: #4f73e7;
+}
+.tag label {
+  padding: 7px 34px 6px 18px;
+  position: relative;
+  z-index: 200;
+  color: white;
+  display: block;
+  border-radius: 16px;
+  background: #305ae3;
+  -webkit-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+.tag .fa {
+  position: absolute;
+  z-index: 250;
+  right: 11px;
+  top: 9px;
+  color: white;
+  line-height: 0.95;
+}
+.tag .fa-check {
+  display: none;
+  top: 8px;
+  right: 10px;
+  -webkit-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+.tag input[type=checkbox]:checked + label {
+  background: #f94877;
+  -webkit-animation: flick 0.08s;
+          animation: flick 0.08s;
+}
+.tag input[type=checkbox]:checked ~ .fa-plus {
+  display: none;
+}
+.tag input[type=checkbox]:checked ~ .fa-check {
+  -webkit-animation: flick 0.08s;
+          animation: flick 0.08s;
+  display: block;
+}
+@-webkit-keyframes flick {
+  60% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes flick {
+  60% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.content {
+    margin-left: 0px!important;
+  }
+.alinear{
+  margin-left: 5%;
+  color: black;
+}
 </style>
   <body data-no-turbolink data-no-transition-cache>
      <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
@@ -289,13 +414,9 @@ td.blanco:hover{
       </div>
       <!-- end container-fluid -->
     </div>
-    <div id="sidebar" class="sidebar">
-      <!-- begin sidebar scrollbar -->
+  <!-- <div id="sidebar" class="sidebar">
       <div data-scrollbar="true" data-height="100%">
-        <!-- begin sidebar nav -->
-
-        <ul class="nav">
-          <div id="resultado"></div>
+        <ul class="nav"> 
           <li class="nav-header">Tus Directorios</li>
           <li class="has-sub active">
               <ul class="sub-menu">
@@ -303,10 +424,8 @@ td.blanco:hover{
               </ul>
           </li>
         </ul>
-        <!-- end sidebar nav -->
       </div>
-      <!-- end sidebar scrollbar -->
-    </div>
+    </div> -->
     <!-- end #sidebar -->
     <div id="content" class="content">
               <h1 class="page-header">
@@ -370,12 +489,10 @@ td.blanco:hover{
                             <div class="panel-body">
                                 <div class="row"> 
                                     
-                                      
-                                    <h2>Bienvenido <%= @nombre %></h2>
-                                    <h4>Te sugerimos buscar un directorio y comenzar a disfrutar los servicios que tienen para tí</h4> 
-                                    <h3>Como empiezo?</h3>
-                                    <h4>En el panel izquierdo pódras buscar el directorio de tu comunidad, unete y comienza a participa en el</h4>
-                                    </div>
+                                     <div id="resultado"></div> 
+                                  
+                                     <h1>Directorios Existentes</h1>
+                                      <div id="directorios_existentes"></div>
                                
                             </div>
                </div>  
@@ -459,7 +576,7 @@ var CampoBusqueda = React.createClass({
  
     render: function() {
       return (  
-        <input type="text" value={this.props.value} onChange={this.props.cambio} className="form-control shake" placeholder="Buscar directorio" id="search"/>
+        <input type="text" value={this.props.value} onChange={this.props.cambio} className="form-control shake" placeholder="¡No encuentras tu directorio, buscalo!" id="search"/>
         
         );
       },
@@ -470,6 +587,7 @@ var CampoBusqueda = React.createClass({
 var query = getUrlParameter('q');
 var url = "api/v1/directorios?q="
 var url1 = "api/v1/get_direct"
+var url2 = "api/v1/directorios_random"
 var Directorios = React.createClass({
     componentDidMount: function() {
       // $.ajax({
@@ -521,7 +639,6 @@ var Directorios = React.createClass({
             if (object.clave=="")
             {
                var link = "#"
-             
             }
             else
             {
@@ -539,7 +656,7 @@ var Directorios = React.createClass({
               return <div>
                 <CampoBusqueda value={this.state.value} cambio={this.handleChange}/>
                 
-                <table>
+                <table className="alinear">
                   <thead>
                   <tr>
                   </tr>
@@ -562,10 +679,79 @@ var Directorios = React.createClass({
 
 
 
-var Misdirectorios = React.createClass({
+// var Misdirectorios = React.createClass({
+//     componentDidMount: function() {
+//       $.ajax({
+//             url: url1 ,
+//             dataType: 'json',
+//             success: function(data) {
+//               this.setState({data: data});
+//             }.bind(this)
+//       });
+    
+//     },
+    
+//     getInitialState: function() {
+//               return {
+//                 data: [],
+//                 value: ''
+   
+//         }
+//             },
+//     handleChange: function(event) {
+//        this.setState({value: event.target.value.substr(0, 140)});
+//        $.ajax({
+//             url: url + this.state.value,
+//             dataType: 'json',
+//             success: function(data) {
+//               this.setState({data: data});
+//             }.bind(this)
+//       });
+//       },
+//     render: function() {   
+
+//             var subir = items
+//             var items = this.state.data.map(function(object){
+//               var link = "/registros?clave=" + object.clave
+//               return <tr>
+//                      <td className="blanco">                  
+//                       <strong><a href={link} className="blanco">#{object.nombre}</a></strong>
+//                      </td>
+//                      </tr>
+                     
+//               });
+                
+//             return <div>
+                
+//                 <table >
+//                   <thead>
+//                   <tr>
+//                   </tr>
+//                   </thead>
+//                   <tbody>
+//                   {items}
+//                   </tbody>
+//                 </table>
+//                 </div>
+
+
+                
+      
+//           }
+//     });
+    
+//     React.render(
+//           <Misdirectorios />,
+//      document.getElementById('directorio')
+//      );
+
+
+
+
+var DirectoriosRandom = React.createClass({
     componentDidMount: function() {
       $.ajax({
-            url: url1 ,
+            url: url2 ,
             dataType: 'json',
             success: function(data) {
               this.setState({data: data});
@@ -595,27 +781,22 @@ var Misdirectorios = React.createClass({
 
             var subir = items
             var items = this.state.data.map(function(object){
-              var link = "/registros?clave=" + object.clave
-              return <tr>
-                     <td className="blanco">                  
-                      <strong><a href={link} className="blanco">#{object.nombre}</a></strong>
-                     </td>
-                     </tr>
+              var link = "/join?clave=" + object.clave
+              return <div className="tag">
+                      <a href={link} className="checkbox"> 
+                     <label for="">{object.nombre}</label>
+                     <i className="fa fa-plus"></i>
+                      <i className="fa fa-check"></i> 
+                     </a>
+                     </div>
                      
               });
                 
-            return <div>
-                
-                <table >
-                  <thead>
-                  <tr>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  {items}
-                  </tbody>
-                </table>
-                </div>
+            return <div className="tag-wrapper">
+                    
+                    {items}
+                    
+                  </div>
 
 
                 
@@ -624,14 +805,11 @@ var Misdirectorios = React.createClass({
     });
     
     React.render(
-          <Misdirectorios />,
-     document.getElementById('directorio')
+          <DirectoriosRandom />,
+     document.getElementById('directorios_existentes')
      );
 
 
-
-
- 
 </script>
 
 <script type="text/javascript">
