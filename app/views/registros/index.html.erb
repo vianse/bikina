@@ -289,7 +289,7 @@ td.blanco:hover{
                         <ul class="dropdown-menu pull-right">
                           <li><a href="/users/edit">Seguridad</a></li>
                           <li class="divider"></li>
-                          <li><%= link_to 'Editar perfil', edit_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first), :class => 'navbar-link' %></li>
+                          <li><%= link_to 'Editar perfil', editar_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first,Perfil.where(:user_id => current_user.id).pluck(:nombre).first), :class => 'navbar-link' %></li>
                           <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
                         </ul>
               </li>

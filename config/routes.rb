@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'delete_images' => 'registros#eliminar_imagenes' , as: :delete_images
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get 'perfils/:id/:nombre' => 'perfils#edit' , as: :editar_perfil
+
   get 'registros/:id/:titulo' => 'registros#show' , as: :show
   # You can have the root of your site routed with "root"
    root 'controlador#index'
