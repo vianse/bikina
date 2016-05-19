@@ -207,7 +207,7 @@ h1{
 
 /* Portrait and Landscape */
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) { 
-#normal{
+  #normal{
     display: none;
   }
   #smart{
@@ -269,6 +269,126 @@ h1{
   }
 }
 
+/* ----------- iPad mini ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  #normal{
+    display: none;
+  }
+  #smart{
+    margin-left: 900px;
+    font-size: 25px;
+    width: 20%;
+    height: 10%;
+    margin-top: -5%;
+  }
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+  #entrar.btn-info {
+      position: absolute;
+      right: 10px;
+
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background: white;
+  }
+   .navbar-header {
+    width: auto;
+    border-bottom: 0px solid hsl(204, 14%, 93%);
+}
+  h1{
+    margin-top: 30%;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%)!important;
+    line-height: 1.1;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    display: block;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  .h4, .text-contrast ,.space-4{
+    font-size: 30px;
+  }
+  #sign{
+    font-size: 25px;
+    width: 20%;
+    height: 10%;
+  }
+
+
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+.navbar-default .navbar-toggle .icon-bar {
+    background: white;
+  }
+  .navbar-header {
+    width: auto;
+    border-bottom: 0px solid hsl(204, 14%, 93%);
+}
+h1{
+    margin-top: 10%;
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%)!important;
+    line-height: 1.1;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    display: block;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  #sign{
+    font-size: 25px;
+    width: 20%;
+    height: 10%;
+  }
+
+}
+
+/* ----------- Galaxy S5 ----------- */
+
+/* Portrait and Landscape */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+  #normal{
+    display: none;
+  }
+  #smart{
+    margin-left: 900px;
+    font-size: 25px;
+    width: 20%;
+    height: 10%;
+    margin-top: -5%;
+  }
+}
+
+/* Portrait */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+h1{
+    margin-top: 45%;
+    font-size: 25px!important;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%)!important;
+    line-height: 1.1;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    display: block;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+    
+}
+
+
+
+
 </style>
 
 <div id="header" class="header navbar navbar-default navbar-fixed-top">
@@ -305,7 +425,7 @@ h1{
             <div class="h4 text-contrast space-4">
               No siguas pasando desapersivido, que tu timeline no te olvide. 
             </div>
-            <a href="/users/sign_up" class="btn btn-info">Regístrate</a>
+            <a href="/users/sign_up" class="btn btn-info" id="sign">Regístrate</a>
         </div>
      </div>
     </div>
