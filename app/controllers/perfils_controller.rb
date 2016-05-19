@@ -10,6 +10,8 @@ class PerfilsController < ApplicationController
   # GET /perfils/1
   # GET /perfils/1.json
   def show
+    @grupo = Unir.where(:user_id => current_user.id).pluck(:grupo_id).first
+    redirect_to "/registros?clave=" + @grupo + "&page=1"
   end
 
   # GET /perfils/new
@@ -19,6 +21,14 @@ class PerfilsController < ApplicationController
 
   # GET /perfils/1/edit
   def edit
+    @user = current_user.id
+    #logger.debug "Id perfil #{Perfil.where(:user_id => @user).pluck(:id)}"
+    if params[:id].to_i ==  Perfil.where(:user_id => @user).pluck(:id).first
+
+      else 
+      @grupo = Unir.where(:user_id => current_user.id).pluck(:grupo_id).first
+      redirect_to "/registros?clave=" + @grupo + "&page=1"
+    end
   end
 
   # POST /perfils
