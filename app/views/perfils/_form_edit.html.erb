@@ -302,6 +302,9 @@ td.blanco:hover{
                             </div>
                             <h5>Foto de Perfil Actual</h5>
                             <%= image_tag(@perfil.photo.url, size: "40") %>
+                            <h5>Código postal</h5>
+                              <%= f.text_field :cp, :class => 'form-control', :placeholder =>"eje. 73993", :required => true %>
+                            </div>
                             <div class="field">
                               <h5>Cambiar tu foto de perfil</h5>
                               <%= f.hidden_field :photo %>

@@ -27,7 +27,12 @@ class PerfilsController < ApplicationController
 
       else 
       @grupo = Unir.where(:user_id => current_user.id).pluck(:grupo_id).first
-      redirect_to "/registros?clave=" + @grupo + "&page=1"
+      if @grupo.blank?
+        redirect_to "/comenzar"
+      else
+        redirect_to "/registros?clave=" + @grupo + "&page=1"
+         
+      end
     end
   end
 
