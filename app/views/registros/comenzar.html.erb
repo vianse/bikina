@@ -358,11 +358,40 @@ p{
   margin-left: 5%;
   color: black;
 }
+.panel-body{
+  width: 100%;
+}
+.contenedor{
+  width: 100%;
+}
+.panel, .panel-inverse{
+  width: 100%;
+}
+
+@media screen and (max-width: 768px){
+  .contenedor{
+    margin-top: 30%!important;
+}
+
+}
+@media screen and (max-width: 320px){
+  .contenedor{
+    margin-top: 40%!important;
+}
+
+}
+@media screen and (min-width: 769px){
+  .contenedor{
+    margin-top: 5%!important;
+}
+
+}
+
 </style>
   <body data-no-turbolink data-no-transition-cache>
-     <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
-    
-  <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
+    <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
+
+    <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
     <!-- begin #header -->
     <div id="header" class="header navbar navbar-default navbar-fixed-top">
       <!-- begin container-fluid -->
@@ -414,103 +443,79 @@ p{
       </div>
       <!-- end container-fluid -->
     </div>
-  <!-- <div id="sidebar" class="sidebar">
-      <div data-scrollbar="true" data-height="100%">
-        <ul class="nav"> 
-          <li class="nav-header">Tus Directorios</li>
-          <li class="has-sub active">
-              <ul class="sub-menu">
-                  <div id="directorio"></div>         
-              </ul>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-    <!-- end #sidebar -->
-    <div id="content" class="content">
-              <h1 class="page-header">
-                <span class="empresa"> 
-                      
+  <div class="contenedor">
+        <h1 class="page-header">
+          <span class="empresa"> 
+              <div id="somedialog" class="dialog">
+              <div class="dialog__overlay"></div>
+              <div class="dialog__content">
+                  <h2>Necesitas un directorio vecinal?</h2>          
+                  <%= form_for(@grupo) do |f| %>
+                      <% if @grupo.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this grupo from being saved:</h2>
 
-        <div id="somedialog" class="dialog">
-          <div class="dialog__overlay"></div>
-          <div class="dialog__content">
-            <h2>Necesitas un directorio vecinal?</h2>
-            <p></p>
-            
-            <%= form_for(@grupo) do |f| %>
-                <% if @grupo.errors.any? %>
-                  <div id="error_explanation">
-                    <h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this grupo from being saved:</h2>
+                          <ul>
+                          <% @grupo.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                  <% end %>
 
-                    <ul>
-                    <% @grupo.errors.full_messages.each do |message| %>
-                      <li><%= message %></li>
-                    <% end %>
-                    </ul>
+                  <div class="field">
+                    <%= f.label "Escribenos brevemente el nombre que quieres para tu directorio" %><br>
+                    <%= f.text_field :nombre ,:required => true%>
+                  </div>
+                  <div class="field">
+                    <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
+                    <%= f.text_field :descripcion,:required => true %>
+                  </div>
+                  <div class="field">
+                    <%= f.label "Ingresa el Código Postal donde sera visto" %><br>
+                    <%= f.text_field :cp,:required => true %>
+                  </div>
+                  <div class="field">
+                    <%= f.hidden_field :user_id, :value => current_user.id %>
+                  </div>
+                  <div class="field">
+                    <%= f.hidden_field :clave, :value => rand(5..100000000) %>
+                  </div>
+                  <p>En breve daramos de alta tu directorio</p>
+                  <div class="actions">
+                        <%= f.submit "Enviar", :class=>"action" %>  
                   </div>
                 <% end %>
+              </div>
 
-                <div class="field">
-                  <%= f.label "Escribenos brevemente el nombre que quieres para tu directorio" %><br>
-                  <%= f.text_field :nombre ,:required => true%>
+              <div id="somedialog1" class="dialog">
+                <div class="dialog__overlay"></div>
+                <div class="dialog__content">
+                  <h2>Unirse a un directorio</h2><div><button class="action" data-dialog-close>Close</button></div>
                 </div>
-                <div class="field">
-                  <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
-                  <%= f.text_field :descripcion,:required => true %>
-                </div>
-                <div class="field">
-                  <%= f.label "Ingresa el Código Postal donde sera visto" %><br>
-                  <%= f.text_field :cp,:required => true %>
-                </div>
-                <div class="field">
-                  <%= f.hidden_field :user_id, :value => current_user.id %>
-                </div>
-                <div class="field">
-                  <%= f.hidden_field :clave, :value => rand(5..100000000) %>
-                </div>
-                <p>En breve daramos de alta tu directorio</p>
-                <div class="actions">
-                  <%= f.submit "Enviar", :class=>"action" %>
-                  
-                </div>
-              <% end %>
-            <div>
-          </div>
-        </div>
-
-         <div id="somedialog1" class="dialog">
-          <div class="dialog__overlay"></div>
-          <div class="dialog__content">
-            <h2>Unirse a un directorio</h2><div><button class="action" data-dialog-close>Close</button></div>
-          </div>
-        </div>
-
-                </span>
+              </div>
+          </span>
+        </h1>
+        <!-- end page-header -->
+        <div class="panel panel-inverse">
+          <div class="panel-body">
+            <div class="row"> 
+              <div id="resultado"></div> 
+              <h1>Directorios Existentes con el código postal <%= Perfil.where(:user_id => current_user.id).pluck(:cp).first%>
               </h1>
-              <!-- end page-header -->
-               <div class="panel panel-inverse">
-                            <div class="panel-body">
-                                <div class="row"> 
-                                    
-                                     <div id="resultado"></div> 
-                                  
-                                     <h1>Directorios Existentes con el código postal <%= Perfil.where(:user_id => current_user.id).pluck(:cp).first%></h1>
-                                      <div id="directorios_existentes"></div>
-                               
-                            </div>
-               </div>  
-               <!-- table -->
-               <!-- footer -->
-               <div id="footer" class="footer">
-                  <span class="pull-right">
-                      <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
-                          <i class="fa fa-arrow-up"></i> <span class="hidden-xs">Back to Top</span>
-                      </a>
-                  </span>
-                  &copy; 2016 All Right Reserved
-               </div>
-    </div>
+              <div id="directorios_existentes"></div>
+            </div>
+          </div>  
+          <!-- footer -->
+          <div id="footer" class="footer">
+            <span class="pull-right">
+              <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">Back to Top</span>
+              </a>
+            </span>
+            &copy; 2016 All Right Reserved
+          </div>
+        </div>
   </div>
   <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732895/jquery-1.9.1.js"></script>
   <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733033/jquery-migrate-1.1.0.min.js"></script>
