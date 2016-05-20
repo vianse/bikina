@@ -13,6 +13,8 @@
     <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
     <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
     <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735249/style.min.css" rel="stylesheet" />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.18.0/mapbox-gl.css' rel='stylesheet' />
   <!-- ================== END BASE CSS STYLE ================== -->
   
   <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
@@ -189,7 +191,7 @@ button.trigger {
 
       width: 90%;
       color: #36213E;
-      background:hsl(210, 5%, 93%);
+      background:white;
       text-transform: lowercase; 
     }
 
@@ -246,12 +248,7 @@ h1{
   text-align: center;
   margin-bottom: 15px;
   
-  span{
-    font-size: 1.4em;
-    color: @red;
-    font-weight: 700;
-    font-style: italic;
-  }
+
 }
 
 p{
@@ -363,6 +360,7 @@ p{
 }
 .contenedor{
   width: 100%;
+  background: transparent;
 }
 .panel, .panel-inverse{
   width: 100%;
@@ -387,8 +385,24 @@ p{
 
 }
 
+
+  #map { position:absolute; top:0; bottom:0; width:100%;z-index: -1 }
+
+.panel{
+background: transparent;
+}
+.panel-body{
+border-bottom: none!important;
+
+}
+.tag-wrapper{
+  background: transparent;
+
+}
+
 </style>
   <body data-no-turbolink data-no-transition-cache>
+   <div id='map'></div>
     <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
 
     <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
@@ -869,5 +883,15 @@ $(document).ready(function() {
     });
 });
 </script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhcmxpbnV4IiwiYSI6ImNpb2c2dXp2MzAxZmh5NW0ybzVxa3AzZ3YifQ.v3cNTwbEpVl-kJzvugOZ8w';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/basic-v8', //hosted style id
+    center: ([-99.145555555556,19.419444444444]), // starting position
+    zoom: 11 // starting zoom
+});
+</script>
+ 
   </body>
 </html>
