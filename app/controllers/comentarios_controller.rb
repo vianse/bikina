@@ -28,17 +28,16 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
+        @user = Registro.where(:registro_id => comentario_params[:registro_id]).pluck(:user_id).first
+        @email= User.where(:id = @user).pluck(:email)
           RestClient.post "https://api:key-e7d79c66e74391fdf48b657624f23ddc"\
         "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
         :from => "Bikina <no-reply@bikina.mx>",
-        :to => "krlos013@gmail.com",
+        :to => @email,
         :subject => "Has recibido un comentario sobre tu producto",
         :html => "<p>El usuario #{current_user.email} te ha preguntado lo siguiente:</p>"\
                  "<p>#{comentario_params[:comentario]}.</p>"
                  
-
-
-
         format.html { redirect_to :back, notice: 'Comentario was successfully created.' }
         format.json { render :show, status: :created, location: @comentario }
       else
