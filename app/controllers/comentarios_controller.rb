@@ -28,7 +28,7 @@ class ComentariosController < ApplicationController
 
     respond_to do |format|
       if @comentario.save
-        @user = Registro.where(:registro_id => comentario_params[:registro_id]).pluck(:user_id).first
+        @user = Registro.where(:id => comentario_params[:registro_id]).pluck(:user_id).first
         @email= User.where(:id => @user).pluck(:email)
           RestClient.post "https://api:key-e7d79c66e74391fdf48b657624f23ddc"\
         "@api.mailgun.net/v3/sandboxb9c2dadab0ea49f6b7130d1091646c59.mailgun.org/messages",
