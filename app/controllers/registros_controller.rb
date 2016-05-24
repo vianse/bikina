@@ -66,6 +66,15 @@ class RegistrosController < ApplicationController
      @grupo = Grupo.new
 
   end
+  def private
+     @unir = Unir.new
+     @nombre = Grupo.where(:clave => params[:clave]).pluck(:nombre).first
+     @descripcion = Grupo.where(:clave => params[:clave]).pluck(:descripcion).first
+     @registros = Registro.all
+     @grupos = Grupo.all
+     @grupo = Grupo.new
+
+  end
 
   # GET /registros/new
   def new

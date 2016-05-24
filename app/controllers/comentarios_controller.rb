@@ -36,7 +36,9 @@ class ComentariosController < ApplicationController
         :to => @email,
         :subject => "Has recibido un comentario sobre tu producto",
         :html => "<p>El usuario #{current_user.email} te ha preguntado lo siguiente:</p>"\
-                 "<p>#{comentario_params[:comentario]}.</p>"
+                 "<p>#{comentario_params[:comentario]}.</p>"\
+                 "<p>Entra a Bikina y responde su mensaje</p>"\
+                 "<span>Atte. Bikina team</span>"
                  
         format.html { redirect_to :back, notice: 'Comentario was successfully created.' }
         format.json { render :show, status: :created, location: @comentario }

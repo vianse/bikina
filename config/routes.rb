@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :registros
   get 'join' => 'registros#join', as: :join
+  get 'privado' => 'registros#private', as: :private
   get 'comenzar' => 'registros#comenzar', as: :comenzar
   get 'home' => 'home#index', as: :home
   get 'perfil' => 'perfils#new', as: :profile

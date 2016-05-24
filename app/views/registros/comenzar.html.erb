@@ -805,13 +805,30 @@ var DirectoriosRandom = React.createClass({
             var subir = items
             var items = this.state.data.map(function(object){
               var link = "/join?clave=" + object.clave
-              return <div className="tag">
+              var link1 = "/privado?clave=" + object.clave
+              var tipo = object.tipo
+              if (tipo == "Publico"){
+
+                return <div className="tag">
                       <a href={link} className="checkbox"> 
                      <label for="">{object.nombre}</label>
                      <i className="fa fa-plus"></i>
                       <i className="fa fa-check"></i> 
                      </a>
                      </div>
+
+              }
+              else
+              {
+                return <div className="tag">
+                      <a href={link1} className="checkbox"> 
+                     <label for="">{object.nombre}</label>
+                     <i className="fa fa-lock"></i>
+                      <i className="fa fa-check"></i> 
+                     </a>
+                     </div>
+              }
+              
                      
               });
                 
