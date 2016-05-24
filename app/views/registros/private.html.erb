@@ -368,7 +368,7 @@ td.blanco:hover{
                                     <h2>Detalles del directorio</h2>
                                     <h4><%= @nombre %></h4>
                                     <h4><%= @descripcion %></h4><br>
-                                    <h2>Ingresa tu código de invitado</h2>
+                                    <h5>Unete a este directorio por 1 dolar mensual</h5>
                                     <%= form_for(@unir) do |f| %>
                 									  <% if @unir.errors.any? %>
                 									    <div id="error_explanation">
@@ -389,7 +389,7 @@ td.blanco:hover{
                   									    <%= f.hidden_field :user_id,:value=>current_user.id %>
                   									  </div>
                   									  <div class="actions">
-                  									    <%= f.submit"Unirme a este directorio", :class=> "pulse"%>
+                  									    <%= f.submit "Unete a este directorio por $1 dolar", :class=> "pulse"%>
                   									  </div>
                   									<% end %>
                                 </div>
