@@ -72,6 +72,15 @@ input[type=text] {
     background: hsl(0, 0%, 91%);
     width: 50%;
 }
+textarea{
+  width: 50%!important;
+  padding: 1em 2em!important;
+  outline: none!important;
+  font-weight: 600!important;
+  border: none!important;
+  color: hsl(0, 0%, 39%)!important;
+  background: hsl(0, 0%, 91%)!important;
+}
 th, td{
   color: black;
 }
@@ -387,8 +396,13 @@ td.blanco:hover{
                                             <%= f.hidden_field :titulo, :value=> Perfil.where(:user_id => current_user.id).pluck(:nombre) %>
                                           </div>
                                           <div class="field">
-                                            <label>Escribe la descripción de tu producto, servicio o habilidad </label><br>
+                                            <label>Escribe la descripción corta de tu producto, servicio o habilidad </label><br>
                                             <%= f.text_field :descripcion, :class=>"form-control",:placeholder => "eje. Jardinería", :required => true%>
+                                          </div>
+                                          <div class="field">
+                                            <label>Escribe la descripción larga de tu producto, servicio o habilidad </label><br>
+                                            <%= f.text_area :descripcionlarga, :id => "descripcionlarga", cols: 20, rows: 10, :class=>"form-control" ,:required => true, :placeholder => "Ingresa una descripcion de tu servicio o producto"%>
+                                            
                                           </div>
                                           <div class="field">
                                             <%= f.label "Dirección de contacto" %><br>

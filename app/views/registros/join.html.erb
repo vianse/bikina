@@ -365,9 +365,14 @@ td.blanco:hover{
                <div class="panel panel-inverse">
                             <div class="panel-body">
                                 <div class="row"> 
+                                    
                                     <h2>Detalles del directorio</h2>
                                     <h4><%= @nombre %></h4>
                                     <h4><%= @descripcion %></h4><br>
+                                    <!-- <span>Convierte este directorio a privado por $10 dolares mensuales</span>
+                                      
+                                    <%= link_to "Comprar", @grupos.paypal_url(group_url) %>
+                                  -->
                                     <%= form_for(@unir) do |f| %>
                 									  <% if @unir.errors.any? %>
                 									    <div id="error_explanation">

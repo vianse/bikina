@@ -1,6 +1,6 @@
 class RegistrosController < ApplicationController
   before_action :set_registro, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html, :json
   # GET /registros
   # GET /registros.json
   def index
@@ -62,7 +62,7 @@ class RegistrosController < ApplicationController
      @nombre = Grupo.where(:clave => params[:clave]).pluck(:nombre).first
      @descripcion = Grupo.where(:clave => params[:clave]).pluck(:descripcion).first
      @registros = Registro.all
-     @grupos = Grupo.all
+     @grupos = Grupo.where(:clave => params[:clave]).first
      @grupo = Grupo.new
 
   end
@@ -105,15 +105,17 @@ class RegistrosController < ApplicationController
   # PATCH/PUT /registros/1
   # PATCH/PUT /registros/1.json
   def update
-    respond_to do |format|
-      if @registro.update(registro_params)
-        format.html { redirect_to @registro, notice: 'Registro was successfully updated.' }
-        format.json { render :show, status: :ok, location: @registro }
-      else
-        format.html { render :edit }
-        format.json { render json: @registro.errors, status: :unprocessable_entity }
-      end
-    end
+    @registro.update(registro_params)
+    respond_with @registro
+    # respond_to do |format|
+    #   if @registro.update(registro_params)
+    #     format.html { redirect_to @registro, notice: 'Registro was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @registro }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @registro.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /registros/1
@@ -134,6 +136,6 @@ class RegistrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_params
-      params.require(:registro).permit(:titulo, :descripcion, :direccion, :telefono1,:costo, :correo, :sitioweb, :logo, :categoria, :user_id,:grupo_id,:countclicks)
+      params.require(:registro).permit(:titulo, :descripcion, :direccion, :telefono1,:costo, :correo, :sitioweb, :logo, :categoria, :user_id,:grupo_id,:countclicks, :descripcionlarga)
     end
 end

@@ -1,5 +1,6 @@
 class Registro < ActiveRecord::Base
 	before_save :default_values
+	belongs_to :grupo
 	self.per_page = 20
 	def to_param
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505021608) do
+ActiveRecord::Schema.define(version: 20160524193221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 20160505021608) do
     t.string   "cp"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "recurring"
+    t.string   "period"
+    t.integer  "cycles"
   end
 
   create_table "megusta", force: :cascade do |t|
@@ -89,8 +92,9 @@ ActiveRecord::Schema.define(version: 20160505021608) do
     t.string   "user_id"
     t.string   "grupo_id"
     t.integer  "countclicks"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "descripcionlarga"
   end
 
   create_table "respuesta", force: :cascade do |t|

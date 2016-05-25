@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get 'perfils/:id/:nombre' => 'perfils#edit' , as: :editar_perfil
 
   get 'registros/:id/:titulo' => 'registros#show' , as: :show
+  
+   get 'grupos' => 'grupos#index', as: :group
+   post "/grupos/:id" => "grupos#show"
+
   # You can have the root of your site routed with "root"
    root 'controlador#index'
 

@@ -712,7 +712,7 @@ var Servicios = React.createClass({
             var items = this.state.data.map(function(object){
               var i = "http://res.cloudinary.com/vianse/" + object.img
               var h = "/registros/" + object.id +"/"+ object.titulo
-              var j = "/registros/" + object.id 
+              var j = "/registros/" + object.id +"/edit"
 
                if (<%= @usuario %> == object.user_id){
                 return <tr>
@@ -724,7 +724,10 @@ var Servicios = React.createClass({
                         <td>{object.telefono1}</td>
                         <td>{object.correo}</td>
                         <td>Visitas {object.countclicks}</td>
-                         <td>
+                        <td>
+                          <a href={j}>Editar</a>
+                        </td>
+                        <td>
                           <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
                         </td>
                       

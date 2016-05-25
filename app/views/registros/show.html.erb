@@ -1,75 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-  <head>
-   <meta charset="UTF-8" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-    <title>Directorio Vecinal</title>
-    <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
-    <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
-    <!-- ================== BEGIN BASE CSS STYLE ================== -->
-    <link href="http://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" id="fontFamilySrc" />
-    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
-    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
-    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735249/style.min.css" rel="stylesheet" />
-  <!-- ================== END BASE CSS STYLE ================== -->
+<head>
+ <meta charset="UTF-8" />
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+ <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+ <title>Directorio Vecinal</title>
+ <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
+ <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
+ <!-- ================== BEGIN BASE CSS STYLE ================== -->
+ <link href="http://fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" id="fontFamilySrc" />
+ <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734615/jquery-ui.min.css" rel="stylesheet" />
+ <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734729/bootstrap.min.css" rel="stylesheet" />
+ <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735152/animate.min.css" rel="stylesheet" />
+ <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735249/style.min.css" rel="stylesheet" />
+ <!-- ================== END BASE CSS STYLE ================== -->
+ <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+ <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735472/jquery.gritter.css" rel="stylesheet" />    
+ <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
+ <!-- common styles -->
+ <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog.css" />
+ <!-- individual effect -->
+ <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog-cathy.css" />
+ <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js">
+ </script>
+</head>
   
-  <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
-    <link href="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447735472/jquery.gritter.css" rel="stylesheet" />    
-  <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
-    
-    <!-- common styles -->
-    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog.css" />
-    <!-- individual effect -->
-    <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog-cathy.css" />
-    <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js"></script>
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-
-<script type="text/javascript" src="http://fancybox.net/js/fancybox-1.3.4/jquery.fancybox-1.3.4.js"></script>
-<link rel="stylesheet" href="http://fancybox.net/js/fancybox-1.3.4/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
-    
-  </head>
 <style type="text/css">
-    body{
-      background-color: white!important;
-      color: #cccccc;
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    }
-    button.trigger {
+  body{
+    background-color: white!important;
+    color: #cccccc;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+  button.trigger {
     background: hsl(359, 53%, 55%);
     color: hsl(0, 0%, 100%);
     border: none;
-    }
+  }
 
-    button {
+  button {
     padding: 1em 2em;
     outline: none;
     font-weight: 600;
     border: none;
     color: hsl(0, 0%, 100%);
     background: hsl(359, 53%, 55%);
-}
+  }
 
-.dialog h2 {
+  .dialog h2 {
     margin: 0;
     font-weight: 400;
     font-size: 2em;
     padding: 0 0 .5em; 
     margin: 0;
-}
+  }
 
-input[type=submit] {
+  input[type=submit] {
     padding: 1em 2em;
     outline: none;
     font-weight: 600;
     border: none;
     color: hsl(0, 0%, 100%);
     background: hsl(359, 53%, 55%);
-}
+  }
 
-input[type=text] {
+  input[type=text] {
     padding: 1em 2em;
     outline: none;
     font-weight: 600;
@@ -77,240 +71,242 @@ input[type=text] {
     color: hsl(0, 0%, 39%);
     background: hsl(0, 0%, 91%);
     width: 50%;
-}
-th, td{
-  color: black;
-}
-button.trigger {
+  }
+  th, td{
+    color: black;
+  }
+  button.trigger {
     background: hsl(359, 53%, 55%);
     color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 6px;
     margin: 5px;
-}
+  }
 
-.page-header-fixed {
+  .page-header-fixed {
     padding-top: 0px;
-}
-    .visible{
-        display: none;
-    }
-    a.font{
-      font-size: 16px;
-    }
-    .font{
-      font-size: 16px;
-    }
-    .verde{
-      color: #00A896;
-    }
-    .subtitle{
-        /* Good: */
-        font-family: .AppleSystemUIFont;
-        font-size: 18px;
-        line-height: 24px;
-    }
-    .panel.panel-success .panel-heading{
-        margin-top: 10px;
-    }
-    .empresa{
-        font-family: .AppleSystemUIFont;
-    }
-    .btn.btn-warning{
-        margin-bottom: 10px;
-    }
-    .circle-red{
-        color: hsl(2, 85%, 61%);
-    }
-    .circle-green{
-        color: hsl(126, 45%, 58%);
-    }
-    .circle-yellow{
-        color: hsl(35, 97%, 62%);
-    }
-    #flotante{  /*padre*/
-    
+  }
+  .visible{
+    display: none;
+  }
+  a.font{
+    font-size: 16px;
+  }
+  .font{
+    font-size: 16px;
+  }
+  .verde{
+    color: #00A896;
+  }
+  .subtitle{
+    /* Good: */
+    font-family: .AppleSystemUIFont;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .panel.panel-success .panel-heading{
+    margin-top: 10px;
+  }
+  .empresa{
+    font-family: .AppleSystemUIFont;
+  }
+  .btn.btn-warning{
+    margin-bottom: 10px;
+  }
+  .circle-red{
+    color: hsl(2, 85%, 61%);
+  }
+  .circle-green{
+    color: hsl(126, 45%, 58%);
+  }
+  .circle-yellow{
+    color: hsl(35, 97%, 62%);
+  }
+  #flotante{  /*padre*/
     width: 100%; 
     height: 100%;
-    }
-    #flotante .A{  /*hijos*/
+  }
+  #flotante .A{  /*hijos*/
     display: inline-block;
     margin-left: 20px;
-    }
-     #flotante .B{
+  }
+  #flotante .B{
     display: inline-block;
     margin-left: 20px;
     margin-top: 0px!important;
-     }
-    #flotante .c{
+  }
+  #flotante .c{
     display: inline-block;
     margin-left: 50px;
-   
-     }
-     #flotante .d{
+
+  }
+  #flotante .d{
     display: inline-block;
     margin-left: 50px;
-   
-     }
-     #flotante .e{
+
+  }
+  #flotante .e{
     display: inline-block;
     margin-left: 50px;
-   
-     }
-    .oculto{
-      display: none;
-    }
-    .mostrar{
+
+  }
+  .oculto{
+    display: none;
+  }
+  .mostrar{
     font-size: 21px;
     font-weight: bold;
-    }
- 
-    strong {
+  }
+
+  strong {
     font-family: Nunito,sans-serif;
     margin-left: 15px;
     font-weight: 100;
     cursor:pointer;
-    }
-    
-    .sidebar .sub-menu{
-      background-color: #2F223D;
-    }
-    .sidebar{
-     background-color: #2F223D;
-    }
+  }
 
-    .blanco{
-      color: #E8E8ED!important;
-      text-overflow:ellipsis!important;
-      white-space:nowrap; 
-      overflow:hidden; 
+  .sidebar .sub-menu{
+    background-color: #2F223D;
+  }
+  .sidebar{
+   background-color: #2F223D;
+  }
 
-    }
-    a.blanco{
-      text-decoration: none;
-      background: transparent;
-    }
-    #search{
-      margin-top: 5%;
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-bottom: 5%;
-      width: 90%;
-      color: #36213E;
-      background:hsl(210, 5%, 93%);
-      text-transform: lowercase; 
-    }
+  .blanco{
+    color: #E8E8ED!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap; 
+    overflow:hidden; 
 
-.panel.panel-inverse .panel-heading {
+  }
+  a.blanco{
+    text-decoration: none;
+    background: transparent;
+  }
+  #search{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    color: #36213E;
+    background:hsl(210, 5%, 93%);
+    text-transform: lowercase; 
+  }
+
+  .panel.panel-inverse .panel-heading {
     background: #554971;
     color: hsl(0, 0%, 100%);
-}
-td.blanco{
-  width: 300px;
-  
-  padding:2%;
-}
-td.blanco:hover{
-  background-color: #554971;
-}
-.hide{
-  display: none;
-}
-.show{
-  padding-top: 3%;
-}
-.font{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: 14px;
+  }
+  td.blanco{
+    width: 300px;
+    
+    padding:2%;
+  }
+  td.blanco:hover{
+    background-color: #554971;
+  }
+  .hide{
+    display: none;
+  }
+  .show{
+    padding-top: 3%;
+  }
+  .font{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 14px;
 
-}
-p{
+  }
+  p{
    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: 12px;
-  color:  hsl(0, 0%, 39%);
+   font-size: 12px;
+   color:  hsl(0, 0%, 39%);
 
-}
-h4{
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: 16px!important;
-  color: black;
-}
+  }
+  h4{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 16px!important;
+    color: black;
+  }
 
-.timeline-footer {
+  .timeline-footer {
     border-bottom: 1px solid hsl(210, 3%, 88%)!important;
     border-top: 0px solid hsl(210, 3%, 88%)!important;
     margin: 15px 0 -20px;
     padding: 15px 0;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica, Arial, sans-serif !important;
     font-size: 12px;
-}
-.img-circle {
+  }
+  .img-circle {
     border-radius: 20%;
-}
-.hiden{
-  display: none;
-}
-.class-contenedor{
-  width: auto;
-  height: auto;
-}
-.class-img{
+  }
+  .hiden{
+    display: none;
+  }
+  .class-contenedor{
+    width: auto;
+    height: auto;
+  }
+  .class-img{
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3%!important;
     width: 600px!important;
     height: 300px!important;
-}
+  }
+  .space{
+    word-wrap: break-word;
+  }
 </style>
-  <body data-no-turbolink data-no-transition-cache>
-     <div id="page-loader" class="page-loader fade in"><span class="spinner">Loading...</span></div> <!-- loading -->
+
+<body data-no-turbolink data-no-transition-cache>
+ <div id="page-loader" class="page-loader fade in">
+  <span class="spinner">Loading...</span>
+</div> <!-- loading -->
     
-  <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
-    <!-- begin #header -->
-    <div id="header" class="header navbar navbar-default navbar-fixed-top">
-      <!-- begin container-fluid -->
-      <div class="container-fluid">
-        <!-- begin mobile sidebar expand / collapse button -->
-        <div class="navbar-header">
-          <a href="/" class="navbar-brand">
-                     bikina 
-
-                    </a>
-          <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <!-- end mobile sidebar expand / collapse button -->
-        
-
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-   
-          </li>
-              <li class="dropdown navbar-user">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="image"><%= image_tag("http://res.cloudinary.com/vianse/" + Perfil.where(:user_id => current_user.id).pluck(:photo).first, size: "40") %></span>
-                          <span class="hidden-xs">
-                          
-                            <strong><%= current_user.email %></strong></span> 
-                          <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                          <li><a href="/users/edit">Seguridad</a></li>
-                          <li class="divider"></li>
-                          <li><%= link_to 'Editar perfil', edit_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first), :class => 'navbar-link' %></li>
-                          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
-                        </ul>
-              </li>
-        </ul>
-
-        <!-- end navbar-right -->
+<div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
+  <div id="header" class="header navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="/" class="navbar-brand">bikina</a>
+        <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
-      <!-- end container-fluid -->
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+        </li>
+        <li class="dropdown navbar-user">
+          <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="image">
+              <%= image_tag("http://res.cloudinary.com/vianse/" + Perfil.where(:user_id => current_user.id).pluck(:photo).first, size: "40") %>
+            </span>
+            <span class="hidden-xs">
+              <strong>
+                <%= current_user.email %>
+              </strong>
+            </span> 
+            <b class="caret"></b>
+          </a>
+            <ul class="dropdown-menu pull-right">
+              <li>
+                <a href="/users/edit">Seguridad</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to 'Editar perfil', edit_perfil_path(Perfil.where(:user_id => current_user.id).pluck(:id).first), :class => 'navbar-link' %>
+              </li>
+              <li>
+                <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %>
+              </li>
+            </ul>
+          </li>
+      </ul>
     </div>
+  </div>
     <div id="sidebar" class="sidebar">
       <!-- begin sidebar scrollbar -->
       <div data-scrollbar="true" data-height="100%">
@@ -416,7 +412,9 @@ h4{
                           <h5>
                             <%= @registro.descripcion %>
                           </h5>
-
+                          <h5>Descripción larga:
+                            <div class="space"><%= @registro.descripcionlarga %></div>
+                          </h5>
                           <h5>Direccion:
                             <%= @registro.direccion %>
                           </h5>
@@ -620,52 +618,27 @@ h4{
                </div>
     </div>
   </div>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732895/jquery-1.9.1.js"></script>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733033/jquery-migrate-1.1.0.min.js"></script>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733159/jquery-ui.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732895/jquery-1.9.1.js"></script>  
   <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733251/bootstrap.min.js"></script>
-  <!--[if lt IE 9]>
-    <script src="assets/crossbrowserjs/html5shiv.js"></script>
-    <script src="assets/crossbrowserjs/respond.min.js"></script>
-  <![endif]-->
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733489/jquery.cookie.js"></script>
   <!-- ================== END BASE JS ================== -->
   
   <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733913/bootstrap_calendar.min.js"></script>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733996/jquery.sparkline.min.js"></script>
-  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734296/jquery.gritter.js"></script>
-    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447734361/page-index.demo.js"></script>
-    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733809/demo.js"></script>
+     <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
     <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732638/apps.js"></script>
-
   <!-- ================== END PAGE LEVEL JS ================== -->
 
-  
+
   <script>
     $(document).ready(function() {
         App.init();
-        Demo.init();
+        //Demo.init();
         //PageDemo.init();
         var $= jQuery.noConflict();
 
     });
   </script>
-  <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/classie.js"></script>
-    <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/dialogFx.js"></script>
-    <script>
-      (function() {
-
-        var dlgtrigger = document.querySelector( '[data-dialog]' ),
-          somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
-          dlg = new DialogFx( somedialog );
-        dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
-      })();
-
-    </script>
-     
- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+<script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709979/js/classie.js"></script>     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
 <script src="https://rawgit.com/arqex/react-json/master/build/Json.js"></script>
 <script src="//cdn.jsdelivr.net/refluxjs/0.2.11/reflux.min.js"></script>
@@ -689,293 +662,284 @@ h4{
 
 
 
-var url_imagenes = "/api/v1/get_imagen?id=" 
-var Imagenes = React.createClass({
-    componentDidMount: function() {
-      $.ajax({
-            url: url_imagenes + <%= @registro.id %> ,
-            dataType: 'json',
-            success: function(data) {
-              this.setState({data: data});
-            }.bind(this)
-      });
-    
-    },
-    close: function(){
-    this.setState({ showModal: "alert alert-success alert-dismissible hiden" });
-    },
-    abrir: function(e){
-      this.setState({ showModal: "" });
-      this.setState({ image: e.target.getAttribute('id')});
-    },
-    
-    getInitialState: function() {
-              return {
-                data: [],
-                value: '',
-                showModal: "hiden",
-                image: ""
-                }
-            },
-
-   
-    render: function() {   
-
-            var subir = items
-            var e = this.abrir;
-            var items = this.state.data.map(function(object){
-              
-             
-            return  <li>
-                        
-                        <a href="#" className="coleccion" onClick={e} id={object.photo.url} data-toggle="modal" data-target=".bd-example-modal-lg">
-                        <img src={object.photo.url} alt=""  />
-                        </a>
-
-                    </li>
-
-              });
-                
-            return  <div>
-                     <ul className="widget-gallery-list clearfix">
-                      {items}
-                      </ul>  
-                      <Modal show={this.state.showModal} onHide={this.close} imagen={this.state.image} />
-                      </div>
-         
-
-           
-                  
-      
-          }
-    });
-    
-
-    var Modal = React.createClass({
-        render: function() {
-          var r = this.props.show
-          var m = this.props.imagen
-          // return <div className={r} id="modal" >
-          //       <button type="button"
-          //         className="close" onClick={this.props.onHide}>
-          //         <span>Cerrar</span>
-          //       </button>
-          //         <img src={m} size="600x300"/>
-          //     </div>;
-
-
-          return <div className="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div className="modal-dialog modal-lg">
-                    <div className="modal-content">
-                      <img src={m} className ="class-img"/>
-                    </div>
-                  </div>
-                </div>;
-
-
-
-        }
-      });
-
-
-
-    React.render(
-          <Imagenes />,
-          
-     document.getElementById('imagenes')
-     );
-
-
-
-
-
-var url_comentarios = "/api/v1/get_comentarios?id=" 
-var Comentarios = React.createClass({
-    componentDidMount: function() {
-      $.ajax({
-            url: url_comentarios + <%= @registro.id %> ,
-            dataType: 'json',
-            success: function(data) {
-              this.setState({data: data});
-            }.bind(this)
-      });
-    
-    },
-    
-    getInitialState: function() {
-              return {
-                data: [],
-                value: '',
-                ide: '',
-                
-   
-        }
-            },
-
-   addClick: function(event) {
-      $.post("/add_educations",
-            {
-            },
-            function(data,status){
-            });
-      this.datos();
-    },
-    render: function() {   
-
-            var subir = items
-            var items = this.state.data.map(function(object){
-              var funcion = 'javascript:respuesta("#' + object.id + '",' + object.id + ');'
-              var photo = "http://res.cloudinary.com/vianse/";
-              
-              
-              return <li className="media media-sm">
-                      <a className="media-left" href="javascript:;">
-                      <img src={photo + object.photo} alt="" className="media-object img-circle" width="40" />
-                      </a>
-                    <div className="media-body">
-                        <h4 className="media-heading">{object.name_user}</h4>
-                        <h5 className="font">{object.comentario}</h5>
-                        <ListaRespuesta comentario={object.id} />
-
-                         <div className="timeline-footer">
-                                <a href={funcion} className="m-r-25" id="mostrar"><i className="fa fa-comments fa-fw"></i> Responder</a>
-                                  
-                         </div>
-                         <Respuesta identificador={object.id}/>
-                     </div>
-
-                    <br/>
-                    
-                       
-                  </li>
- 
-              });
-                
-            return  <span>
-                      {items}
-                    </span>   
-
-      
-          }
-    });
-    
-    React.render(
-          <Comentarios />,
-     document.getElementById('comentarios')
-     );
-
-// Componente Respuesta
-    var Respuesta = React.createClass({
-    render: function() {
-
-      return (  <div id="contenedor">
-                  <div id={this.props.identificador} className="hide">
-                      <%= form_for(@respuestum) do |f| %>
-                        <% if @respuestum.errors.any? %>
-                          <div id="error_explanation">
-                            <h2><%= pluralize(@respuestum.errors.count, "error") %> prohibited this respuestum from being saved:</h2>
-
-                            <ul>
-                            <% @respuestum.errors.full_messages.each do |message| %>
-                              <li><%= message %></li>
-                            <% end %>
-                            </ul>
-                          </div>
-                        <% end %>
-                        <div id="left">
-                        <div className="field">
-                          <%= f.text_field :respuesta, :className => "form-control", :placeholder => "Escribe una respuesta...", :required => true %>
-                        </div>
-                        <div className="field">
-                          <%= f.hidden_field :comentario_id, :id => "respuesta" ,:className => "respuesta_valor" %>
-                        </div>
-                         <div className="field">
-                          <%= f.hidden_field :user_id, :value => current_user.id %>
-                        </div>
-                        <div className="field">
-
-                          <%= f.hidden_field :name_user, :value => Perfil.where(:user_id => current_user.id).pluck(:nombre).first %>
-                        </div>
-                        <div className="field">
-
-                          <%= f.hidden_field :grupo_id, :value => @registro.grupo_id %>
-                        </div>
-                        <div className="field">
-
-                          <%= f.hidden_field :registro_id, :value => @registro.id %>
-                        </div>
-                        </div>
-                        <div id="right">
-                        <div className="actions">
-                          <%= f.submit  "Responder" ,:id=> "hide" ,:className => "btn_respuesta" %>
-                          
-                        </div>
-                        </div>
-                      <% end %>
-                    </div>
-                  </div>
-
-        );
-        },
-      });
-
-
-    var url_respuesta = "/api/v1/get_respuestas?id=" 
-    var ListaRespuesta = React.createClass({
+    var url_imagenes = "/api/v1/get_imagen?id=" 
+    var Imagenes = React.createClass({
         componentDidMount: function() {
-      $.ajax({
-            url: url_respuesta + this.props.comentario ,
-            dataType: 'json',
-            success: function(data) {
-              this.setState({data: data});
-            }.bind(this)
-      });
-    
-    },
-    
-    getInitialState: function() {
-              return {
-                data: [],
-                value: '',
-                ide: '',
-                
-        }
-            },
-    render: function() {
-       var items = this.state.data.map(function(object){
-
-               var photo = "http://res.cloudinary.com/vianse/";
-      return <div className="media media-sm">
-                    <a className="media-left" href="javascript:;">
-                      <img src={photo + object.photo} alt="" className="media-object img-circle" width="40" />
-                    </a>
-                    <div className="media-body">
-                    <h4 className="media-heading font">{object.name_user}</h4>
-                    <p>{object.respuesta}</p>
-                     </div>
-                     </div>
-
-          
-         });
-           return  <span>
-                      {items}
-                    </span> 
+          $.ajax({
+                url: url_imagenes + <%= @registro.id %> ,
+                dataType: 'json',
+                success: function(data) {
+                  this.setState({data: data});
+                }.bind(this)
+          });
+        
         },
-      });
+        close: function(){
+        this.setState({ showModal: "alert alert-success alert-dismissible hiden" });
+        },
+        abrir: function(e){
+          this.setState({ showModal: "" });
+          this.setState({ image: e.target.getAttribute('id')});
+        },
+        
+        getInitialState: function() {
+                  return {
+                    data: [],
+                    value: '',
+                    showModal: "hiden",
+                    image: ""
+                    }
+                },
 
-    
+       
+        render: function() {   
+
+                var subir = items
+                var e = this.abrir;
+                var items = this.state.data.map(function(object){
+                  
+                 
+                return  <li>
+                            
+                            <a href="#" className="coleccion" onClick={e} id={object.photo.url} data-toggle="modal" data-target=".bd-example-modal-lg">
+                            <img src={object.photo.url} alt=""  />
+                            </a>
+
+                        </li>
+
+                  });
+                    
+                return  <div>
+                         <ul className="widget-gallery-list clearfix">
+                          {items}
+                          </ul>  
+                          <Modal show={this.state.showModal} onHide={this.close} imagen={this.state.image} />
+                          </div>
+             
+
+               
+                      
+          
+              }
+        });
+        
+
+        var Modal = React.createClass({
+            render: function() {
+              var r = this.props.show
+              var m = this.props.imagen
+              // return <div className={r} id="modal" >
+              //       <button type="button"
+              //         className="close" onClick={this.props.onHide}>
+              //         <span>Cerrar</span>
+              //       </button>
+              //         <img src={m} size="600x300"/>
+              //     </div>;
+
+
+              return <div className="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div className="modal-dialog modal-lg">
+                        <div className="modal-content">
+                          <img src={m} className ="class-img"/>
+                        </div>
+                      </div>
+                    </div>;
+
+
+
+            }
+          });
+
+
+
+        React.render(
+              <Imagenes />,
+              
+         document.getElementById('imagenes')
+         );
+
+
+      var url_comentarios = "/api/v1/get_comentarios?id=" 
+      var Comentarios = React.createClass({
+          componentDidMount: function() {
+            $.ajax({
+                  url: url_comentarios + <%= @registro.id %> ,
+                  dataType: 'json',
+                  success: function(data) {
+                    this.setState({data: data});
+                  }.bind(this)
+            });
+          
+          },
+          
+          getInitialState: function() {
+                    return {
+                      data: [],
+                      value: '',
+                      ide: '',
+                      
+         
+              }
+                  },
+
+         addClick: function(event) {
+            $.post("/add_educations",
+                  {
+                  },
+                  function(data,status){
+                  });
+            this.datos();
+          },
+          render: function() {   
+
+                  var subir = items
+                  var items = this.state.data.map(function(object){
+                    var funcion = 'javascript:respuesta("#' + object.id + '",' + object.id + ');'
+                    var photo = "http://res.cloudinary.com/vianse/";
+                    
+                    
+                    return <li className="media media-sm">
+                            <a className="media-left" href="javascript:;">
+                            <img src={photo + object.photo} alt="" className="media-object img-circle" width="40" />
+                            </a>
+                          <div className="media-body">
+                              <h4 className="media-heading">{object.name_user}</h4>
+                              <h5 className="font">{object.comentario}</h5>
+                              <ListaRespuesta comentario={object.id} />
+
+                               <div className="timeline-footer">
+                                      <a href={funcion} className="m-r-25" id="mostrar"><i className="fa fa-comments fa-fw"></i> Responder</a>
+                                        
+                               </div>
+                               <Respuesta identificador={object.id}/>
+                           </div>
+
+                          <br/>
+                          
+                             
+                        </li>
+       
+                    });
+                      
+                  return  <span>
+                            {items}
+                          </span>   
+
+            
+                }
+          });
+          
+          React.render(
+                <Comentarios />,
+           document.getElementById('comentarios')
+           );
+
+    // Componente Respuesta
+        var Respuesta = React.createClass({
+        render: function() {
+
+          return (  <div id="contenedor">
+                      <div id={this.props.identificador} className="hide">
+                          <%= form_for(@respuestum) do |f| %>
+                            <% if @respuestum.errors.any? %>
+                              <div id="error_explanation">
+                                <h2><%= pluralize(@respuestum.errors.count, "error") %> prohibited this respuestum from being saved:</h2>
+
+                                <ul>
+                                <% @respuestum.errors.full_messages.each do |message| %>
+                                  <li><%= message %></li>
+                                <% end %>
+                                </ul>
+                              </div>
+                            <% end %>
+                            <div id="left">
+                            <div className="field">
+                              <%= f.text_field :respuesta, :className => "form-control", :placeholder => "Escribe una respuesta...", :required => true %>
+                            </div>
+                            <div className="field">
+                              <%= f.hidden_field :comentario_id, :id => "respuesta" ,:className => "respuesta_valor" %>
+                            </div>
+                             <div className="field">
+                              <%= f.hidden_field :user_id, :value => current_user.id %>
+                            </div>
+                            <div className="field">
+
+                              <%= f.hidden_field :name_user, :value => Perfil.where(:user_id => current_user.id).pluck(:nombre).first %>
+                            </div>
+                            <div className="field">
+
+                              <%= f.hidden_field :grupo_id, :value => @registro.grupo_id %>
+                            </div>
+                            <div className="field">
+
+                              <%= f.hidden_field :registro_id, :value => @registro.id %>
+                            </div>
+                            </div>
+                            <div id="right">
+                            <div className="actions">
+                              <%= f.submit  "Responder" ,:id=> "hide" ,:className => "btn_respuesta" %>
+                              
+                            </div>
+                            </div>
+                          <% end %>
+                        </div>
+                      </div>
+
+            );
+            },
+          });
+
+
+          var url_respuesta = "/api/v1/get_respuestas?id=" 
+          var ListaRespuesta = React.createClass({
+              componentDidMount: function() {
+            $.ajax({
+                  url: url_respuesta + this.props.comentario ,
+                  dataType: 'json',
+                  success: function(data) {
+                    this.setState({data: data});
+                  }.bind(this)
+            });
+          
+          },
+          
+          getInitialState: function() {
+                    return {
+                      data: [],
+                      value: '',
+                      ide: '',
+                      
+              }
+                  },
+          render: function() {
+             var items = this.state.data.map(function(object){
+
+                     var photo = "http://res.cloudinary.com/vianse/";
+            return <div className="media media-sm">
+                          <a className="media-left" href="javascript:;">
+                            <img src={photo + object.photo} alt="" className="media-object img-circle" width="40" />
+                          </a>
+                          <div className="media-body">
+                          <h4 className="media-heading font">{object.name_user}</h4>
+                          <p>{object.respuesta}</p>
+                           </div>
+                           </div>
+
+                
+               });
+                 return  <span>
+                            {items}
+                          </span> 
+              },
+            });
 </script>
 <script type="text/javascript">
 
   $( document ).ready(function() {
-
       $("#respuestas").hide();
       $("#comment").hide();
-      
-
+      $('.best_in_place').best_in_place();
   });
-
-
 function respuesta(c, comentario){
     $(".respuesta_valor").val(comentario);
     $(c).removeClass( "hide" ).addClass("show");
@@ -992,8 +956,6 @@ function respuesta(c, comentario){
   }
 
   
-
-
 
 
 </script>
