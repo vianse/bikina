@@ -23,6 +23,7 @@
  <link rel="stylesheet" type="text/css" href="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709940/css/dialog-cathy.css" />
  <script src="http://res.cloudinary.com/dnubgpeun/raw/upload/v1461709980/js/modernizr.custom.js">
  </script>
+ <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/start/jquery-ui.css" type="text/css" media="all" />
 </head>
   
 <style type="text/css">
@@ -262,6 +263,23 @@
     font-weight: bold;
    padding-bottom: 10px!important;
   }
+  #larga{
+
+    width:auto;
+    height:60px;
+    display:block;
+    overflow:hidden;
+    text-align: justify;
+    text-justify: inter-word;
+}
+#more{
+  margin-left: 80%!important;
+  font-weight:  bold;
+  text-decoration: none;
+  text-align: right!important;
+}
+
+
 </style>
 
 <body data-no-turbolink data-no-transition-cache>
@@ -404,42 +422,64 @@
               <!-- end page-header -->
                <div class="panel panel-inverse">
                             <div class="panel-body">
+
+
               <div class="row">
                 <!-- begin col-4 -->
-              <div class="col-md-4">
+
+                  <div class="col-md-4">
                   <!-- begin widget -->
-                          
-                          <h3>   
-                            <%= @registro.titulo %>
-                          </h3>
-
-                          <h5>
-                            <%= @registro.descripcion %>
-                          </h5>
-                          <h5><span class="negritas">Descripción de tu contenido:</span>
-                            <div class="space"><%= @registro.descripcionlarga %></div>
-                          </h5>
-                          <h5>Direccion:
+                  <div class="widget widget-blog">
+                      <div class="widget-blog-cover">
+                        <% if @registro.logo? %>
+                          <img src="<%= @registro.logo %>" alt="">
+                          <% else %>
+                          <img src="http://dummyimage.com/600x400/b0b0b0/fcfcfc&text=Sube+una+imagen" alt="">
+                          <% end %>
+                      </div>
+                      <div class="widget-blog-author">
+                          <div class="widget-blog-author-image">
+                              <img src="http://res.cloudinary.com/vianse/<%= Perfil.where(:user_id => @registro.user_id).pluck(:photo).first%>" alt="">
+                          </div>
+                          <div class="widget-blog-author-info">
+                              <h5 class="m-t-0 m-b-1"><%= @registro.titulo %></h5>
+                              <p class="text-muted m-0 f-s-11"><%= @registro.descripcion %></p>
+                          </div>
+                      </div>
+                      <div class="widget-blog-content">
+                          <% if @registro.descripcionlarga? %>
+                           <h5>Contenido de tu anuncio:</h5>
+                            <p id="larga"><%= @registro.descripcionlarga %></p>
+                            <a id="more" class="btn" href="#">ver + </a>
+                          <% else %>
+                          <% end %>
+                          <p>Direccion:
                             <%= @registro.direccion %>
-                          </h5>
-
-                          <h5>Telefono:
+                          </p>
+                          <p>Telefono:
                             <%= @registro.telefono1 %>
-                          </h5>
-
-                          <h5>Costo:
+                          </p>
+                          <p>Costo:
                             <%= @registro.costo %>
-                          </h5>
-
-                          <h5>Correo:
+                          </p>
+                          <p>Correo:
                             <%= @registro.correo %>
-                          </h5>
-
-                          <h5>Sitio web:
+                          </p>
+                          <p>Sitio web:
                             <a href="<%= @registro.sitioweb %>"><%= @registro.sitioweb %></a>
-                           
-                          </h5>
-                           <% if @usuario == @registro.user_id.to_i  %>
+                          </p>
+                      </div>
+                  </div>
+                  <!-- end widget -->
+              </div>
+
+
+
+              <!-- end col-4 -->
+              <!-- begin col-4 -->
+                      <div class="col-md-4">
+                          <!-- begin widget -->
+                          <% if @usuario == @registro.user_id.to_i  %>
 
                           <%= form_for(@foto) do |f| %>
                             <% if @foto.errors.any? %>
@@ -478,13 +518,6 @@
                           <% end %>
                           <% else %>
                           <% end %>
-
-                  <!-- end widget -->
-              </div>
-              <!-- end col-4 -->
-              <!-- begin col-4 -->
-                      <div class="col-md-4">
-                          <!-- begin widget -->
                           <div class="widget widget-gallery">
                               <div class="widget-gallery-header">
                                   <h5>Colección de Imagenes</h5>
@@ -945,6 +978,23 @@
       $('.best_in_place').best_in_place();
 
   });
+
+var h = $('#larga')[0].scrollHeight;
+
+
+$('#more').click(function(e) {
+    e.stopPropagation();
+    $('#larga').animate({
+        'height': h
+    })
+});
+
+$(document).click(function() {
+    $('#larga').animate({
+        'height': '50px'
+    })
+})
+
 function respuesta(c, comentario){
     $(".respuesta_valor").val(comentario);
     $(c).removeClass( "hide" ).addClass("show");

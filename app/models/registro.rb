@@ -2,6 +2,7 @@ class Registro < ActiveRecord::Base
 	before_save :default_values
 	belongs_to :grupo
 	self.per_page = 20
+	mount_uploader :logo, ImagenUploader
 	def to_param
 
 		"#{id} #{titulo}".parameterize

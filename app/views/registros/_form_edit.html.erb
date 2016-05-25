@@ -388,6 +388,12 @@ td.blanco:hover{
                                             <%= f.label "Ingresa tu sitio web o pagina facebook" %><br>
                                             <%= f.text_field :sitioweb,:class=>"form-control",:placeholder => "http://facebook.com/mipagina" %>
                                           </div>
+                                          <div class="field">
+                                          <h5>Cambia la imagen de tu publicación</h5>
+                                          <%= f.hidden_field :logo %>
+                                          <%= f.file_field :logo,:class => 'form-control ' %>
+                                          <%= f.hidden_field :remote_logo_url %>         
+                                        </div>
 
                                           <div class="field">
                                             <%= f.hidden_field :user_id, :value => current_user.id %>

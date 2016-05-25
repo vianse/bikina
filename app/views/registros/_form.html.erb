@@ -431,6 +431,12 @@ td.blanco:hover{
                                           <div class="field">
                                             <%= f.hidden_field :user_id, :value => current_user.id %>
                                           </div>
+                                          <div class="field">
+                                          <h5>Imagen para tu publicación</h5>
+                                          <%= f.hidden_field :logo %>
+                                          <%= f.file_field :logo,:class => 'form-control ' %>
+                                          <%= f.hidden_field :remote_logo_url %>         
+                                        </div>
                                           <div class="actions">
                                             <%= f.submit "Publicar",:class=> "boton" %>
                                           </div>
