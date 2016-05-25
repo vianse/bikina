@@ -258,6 +258,10 @@
   .space{
     word-wrap: break-word;
   }
+  .negritas{
+    font-weight: bold;
+   padding-bottom: 10px!important;
+  }
 </style>
 
 <body data-no-turbolink data-no-transition-cache>
@@ -412,7 +416,7 @@
                           <h5>
                             <%= @registro.descripcion %>
                           </h5>
-                          <h5><strong>Descripción de tu contenido:</strong>
+                          <h5><span class="negritas">Descripción de tu contenido:</span>
                             <div class="space"><%= @registro.descripcionlarga %></div>
                           </h5>
                           <h5>Direccion:
