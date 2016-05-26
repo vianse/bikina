@@ -289,7 +289,7 @@ h1{
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="field">
                   <%= f.label "Ingresa tu correo electronico" %><br />
-                  <%= f.email_field :email, autofocus: true, :class => 'form-control' ,:placeholder => "example@empresa.com", :id=>"correo"%>
+                  <%= f.email_field :email, autofocus: true, :class => 'form-control' ,:placeholder => "example@empresa.com", :id=>"correo", :required => true%>
                 </div>
 
                 <div class="field">

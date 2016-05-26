@@ -253,8 +253,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 3%!important;
-    width: 600px!important;
-    height: 300px!important;
+    width: auto!important;
+    height: auto!important;
   }
   .space{
     word-wrap: break-word;
@@ -278,7 +278,9 @@
   text-decoration: none;
   text-align: right!important;
 }
-
+.modal-content{
+  background-color: transparent!important;
+}
 
 </style>
 
@@ -777,7 +779,9 @@
               return <div className="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                       <div className="modal-dialog modal-lg">
                         <div className="modal-content">
-                          <img src={m} className ="class-img"/>
+                        <div className="widget-blog-cover">
+                           <img src={m} className ="class-img"/>
+                        </div>
                         </div>
                       </div>
                     </div>;
