@@ -4,7 +4,7 @@
    <meta charset="UTF-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-    <title>Directorio Vecinal</title>
+    <title>Bikina -- Directorio Vecinal</title>
     <meta name="description" content="Morphing Buttons Concept: Inspiration for revealing content by morphing the action element" />
     <meta name="keywords" content="expanding button, morph, modal, fullscreen, transition, ui" />
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
@@ -234,8 +234,24 @@ td.blanco:hover{
             
           </li>
               <li class="dropdown navbar-user">
+                <% if current_user.provider == "facebook" %>
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                          <span class="image">
+                            <%= image_tag(current_user.photo) %>
+                          </span>
                           <span class="hidden-xs">         
+                            <strong><%= current_user.name %></strong></span> 
+                          <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                        
+                          <li class="divider"></li>
+                          
+                          <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
+                        </ul>
+                    <% else %>
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                       <span class="hidden-xs">         
                             <strong><%= current_user.email %></strong></span> 
                           <b class="caret"></b>
                         </a>
@@ -245,6 +261,7 @@ td.blanco:hover{
                           
                           <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete  %></li>
                         </ul>
+                    <% end %>
               </li>
         </ul>
 
@@ -279,12 +296,17 @@ td.blanco:hover{
                <div class="panel panel-inverse">
                     <div class="panel-body">
                       <div class="row"> 
+                        <% if current_user.provider == "facebook" %>
+                        <div class="alert alert-success fade in m-b-10">
+                            Importamos el perfil de fecebook para mayor comodidad.
+                            <span class="close" data-dismiss="alert">×</span>
+                        </div>
+                        <% end %>
                         <h2>Creando Perfil</h2>
                            <%= form_for(@perfil) do |f| %>
                             <% if @perfil.errors.any? %>
                               <div id="error_explanation">
                                 <h2><%= pluralize(@perfil.errors.count, "error") %> prohibited this perfil from being saved:</h2>
-
                                 <ul>
                                 <% @perfil.errors.full_messages.each do |message| %>
                                   <li><%= message %></li>
@@ -295,17 +317,30 @@ td.blanco:hover{
 
                             <div class="field">
                             <h5>Ingresa tu nombre completo, este aparecera en tus servicios</h5>
+                              <% if current_user.provider == "facebook" %>
+                              <%= f.text_field :nombre, :value => current_user.name, :class => 'form-control', :placeholder =>"eje. Francisco Nuñez", :required => true %>
+                              <% else %>
                               <%= f.text_field :nombre, :class => 'form-control', :placeholder =>"eje. Francisco Nuñez", :required => true %>
+                              <% end %>
                             </div>
                             <h5>Ingresa tu código postal</h5>
                               <%= f.text_field :cp, :class => 'form-control', :placeholder =>"eje. 73993", :required => true %>
                             </div>
+                             <% if current_user.provider == "facebook" %>
                             <div class="field">
+                              <h5>Agrega una foto de perfil</h5>
+                              <%= f.hidden_field :photo %>
+                              <%= f.file_field :photo ,:class => 'form-control ' %>
+                              <%= f.hidden_field :remote_photo_url, :value => current_user.photo %>         
+                            </div>
+                            <% else %>
+                             <div class="field">
                               <h5>Agrega una foto de perfil</h5>
                               <%= f.hidden_field :photo %>
                               <%= f.file_field :photo,:class => 'form-control ', :required => true %>
                               <%= f.hidden_field :remote_photo_url %>         
                             </div>
+                            <% end %>
                             <div class="field">
                               <%= f.hidden_field :user_id,:value => current_user.id %>
                             </div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :cps
   resources :perfils
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   get 'home/index'
 
   resources :registros
@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'comenzar' => 'registros#comenzar', as: :comenzar
   get 'home' => 'home#index', as: :home
   get 'perfil' => 'perfils#new', as: :profile
+  get 'webhook' => 'bot#webhook', as: :webhook
+  get 'bot/webhook' => 'bot#webhook'
+  post 'bot/webhook' => 'bot#receive_message'
   #delete 'unjoin/:grupo_id' => 'registros#eliminar', :via => :delete
   get 'unjoin' => 'registros#eliminar' , as: :unjoin
   get 'delete_images' => 'registros#eliminar_imagenes' , as: :delete_images
