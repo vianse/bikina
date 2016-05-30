@@ -9342,7 +9342,7 @@ Grupo.create(nombre: "Conjunto San Diego", descripcion: "Venta de Productos y Se
 Grupo.create(nombre: "El Gigante (imevis)", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006574", publicado: "1", tipo: "Publico", cp: "55709")
 Grupo.create(nombre: "Rancho la Providencia", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006575", publicado: "1", tipo: "Publico", cp: "55710")
 Grupo.create(nombre: "Arcos las Torres", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006576", publicado: "1", tipo: "Publico", cp: "55710")
-Grupo.create(nombre: "Sección Jardín "Las Plazas" (Unidad Coacalco)", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006577", publicado: "1", tipo: "Publico", cp: "55710")
+Grupo.create(nombre: "Sección Jardín Las Plazas (Unidad Coacalco)", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006577", publicado: "1", tipo: "Publico", cp: "55710")
 Grupo.create(nombre: "Villa de las Flores 1a Sección (Unidad Coacalco)", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006578", publicado: "1", tipo: "Publico", cp: "55710")
 Grupo.create(nombre: "Residencial Las Dalias I,II,III Y IV", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006579", publicado: "1", tipo: "Publico", cp: "55710")
 Grupo.create(nombre: "Villa de las Flores 2a Sección (Unidad Coacalco)", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5006580", publicado: "1", tipo: "Publico", cp: "55710")
