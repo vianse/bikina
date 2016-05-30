@@ -7874,7 +7874,7 @@ Grupo.create(nombre: "Progreso Industrial", descripcion: "Venta de Productos y S
 Grupo.create(nombre: "La Concepción", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005106", publicado: "1", tipo: "Publico", cp: "54460")
 Grupo.create(nombre: "Villas del Bosque", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005107", publicado: "1", tipo: "Publico", cp: "54460")
 Grupo.create(nombre: "Caja de Agua", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005108", publicado: "1", tipo: "Publico", cp: "54460")
-Grupo.create(nombre: ""Y" Griega", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005109", publicado: "1", tipo: "Publico", cp: "54460")
+Grupo.create(nombre: "Y Griega", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005109", publicado: "1", tipo: "Publico", cp: "54460")
 Grupo.create(nombre: "Los Tubos", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005110", publicado: "1", tipo: "Publico", cp: "54460")
 Grupo.create(nombre: "San Pablo de la Cruz", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005111", publicado: "1", tipo: "Publico", cp: "54460")
 Grupo.create(nombre: "Llano Grande", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005112", publicado: "1", tipo: "Publico", cp: "54463")
