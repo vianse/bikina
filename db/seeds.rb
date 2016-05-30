@@ -3028,7 +3028,7 @@ Grupo.create(nombre: "Hacienda La Galia", descripcion: "Venta de Productos y Ser
 Grupo.create(nombre: "Campo Real II", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000260", publicado: "1", tipo: "Publico", cp: "50245")
 Grupo.create(nombre: "Residencial la Joya", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000261", publicado: "1", tipo: "Publico", cp: "50245")
 Grupo.create(nombre: "Sor Juana Inés de la Cruz", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000262", publicado: "1", tipo: "Publico", cp: "50245")
-Grupo.create(nombre: "Jesús García Lovera "El Pilar"", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000263", publicado: "1", tipo: "Publico", cp: "50245")
+Grupo.create(nombre: "Jesús García Lovera El Pilar", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000263", publicado: "1", tipo: "Publico", cp: "50245")
 Grupo.create(nombre: "San Jerónimo", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000264", publicado: "1", tipo: "Publico", cp: "50245")
 Grupo.create(nombre: "Santa María Totoltepec", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000265", publicado: "1", tipo: "Publico", cp: "50245")
 Grupo.create(nombre: "San Antonio Abad", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5000266", publicado: "1", tipo: "Publico", cp: "50245")
