@@ -8192,7 +8192,7 @@ Grupo.create(nombre: "Los Pájaros", descripcion: "Venta de Productos y Servicio
 Grupo.create(nombre: "Ampliación Ejidal San Isidro", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005424", publicado: "1", tipo: "Publico", cp: "54763")
 Grupo.create(nombre: "Unidad Cívica Bacardi", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005425", publicado: "1", tipo: "Publico", cp: "54763")
 Grupo.create(nombre: "Residencial la Joya", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005426", publicado: "1", tipo: "Publico", cp: "54763")
-Grupo.create(nombre: "INFONAVIT Sur "Niños Héroes"", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005427", publicado: "1", tipo: "Publico", cp: "54763")
+Grupo.create(nombre: "INFONAVIT Sur Niños Héroes", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005427", publicado: "1", tipo: "Publico", cp: "54763")
 Grupo.create(nombre: "Las Mariposas", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005428", publicado: "1", tipo: "Publico", cp: "54763")
 Grupo.create(nombre: "San Martín Obispo o Tepetlixpan", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005429", publicado: "1", tipo: "Publico", cp: "54763")
 Grupo.create(nombre: "Plan Maestro San Martín Obispo", descripcion: "Venta de Productos y Servicios", user_id:"6", clave: "5005430", publicado: "1", tipo: "Publico", cp: "54763")
