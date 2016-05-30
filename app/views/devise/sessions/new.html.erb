@@ -264,7 +264,9 @@ h1{
 }
 
 
-
+.btn,.btn-primary,.btn-icon{
+  color: white!important;
+}
 
 
 
@@ -302,14 +304,16 @@ h1{
                   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
                     <%= link_to "¿Eres nuevo en bikina?", new_registration_path(resource_name),:class=>"nuevo" %><br />
                   <% end -%>
-                  <a href="">Aviso de Privacidad</a>
+                 
                 </div>
 
 
               <% end %>
               <%- if devise_mapping.omniauthable? %>
                 <%- resource_class.omniauth_providers.each do |provider| %>
-                  <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+                  <%= link_to "Inicia sesión con #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) , :class => "btn btn-primary btn-icon" %>
+                  
+                 
                 <% end -%>
               <% end -%>
 
