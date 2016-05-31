@@ -14,8 +14,8 @@ class Api::V1::BotServiciosController <ApplicationController
 				:image_url => a.logo.url,
 				:buttons => [{
 				 	            :type=>"postback",
-						   		:title=>"Contactar",
-						        :payload=>"edhbusqueda"}
+						   		:title=>"llamar #{a.telefono1}",
+						        :payload=>"end"}
 						      ]
 			}
 	    end
