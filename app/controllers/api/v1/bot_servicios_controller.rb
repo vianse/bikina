@@ -11,7 +11,7 @@ class Api::V1::BotServiciosController <ApplicationController
 			{
 				:title => a.titulo,
 				:subtitle => a.descripcion,
-				:image_url => a.logo,
+				:image_url => a.logo.url,
 				:buttons => [{
 				 	            :type=>"postback",
 						   		:title=>"Contactar",
