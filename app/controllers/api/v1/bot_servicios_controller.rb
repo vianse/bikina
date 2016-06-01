@@ -1,21 +1,22 @@
 class Api::V1::BotServiciosController <ApplicationController
 	def index
-		@servicios = Registro.select(:titulo, :descripcion,:user_id,:telefono1,:correo,:countclicks, :user_id,:id, :logo).where(:grupo_id => params[:clave]).order('id DESC')
+		@perfiles = Perfil.where(:cp => params[:cp]).pluck(:user_id)
+		@servicios = Registro.select(:titulo, :descripcion,:user_id,:telefono1,:correo,:countclicks, :user_id,:id, :logo).where(:user_id => @perfiles).where("lower(descripcion) LIKE ?", "%#{params[:oficio.downcase]}%")
 		
-		@estructura = '{"attachment":
-		{"type":"template","payload":
-			{"template_type":"generic", 
-				"elements":'
-		@estructurafinal = '}}}'
-		servicios = @servicios.map do |a|
-			{
-				:title => a.titulo,
-				:subtitle => a.descripcion,
-				:image_url => a.logo.url,
-				:buttons => [{
-				 	            :type=>"postback",
-						   		:title=>"llamar #{a.telefono1}",
-						        :payload=>"end"}
+		 @estructura = '{"attachment":
+		 {"type":"template","payload":
+		 	{"template_type":"generic", 
+		 		"elements":'
+		 @estructurafinal = '}}}'
+		 servicios = @servicios.map do |a|
+		 	{
+		 		:title => a.titulo,
+		 		:subtitle => a.descripcion,
+		 		:image_url => a.logo.url,
+		 		:buttons => [{
+		 		 	            :type=>"postback",
+		 				   		:title=>"llamar #{a.telefono1}",
+		 				        :payload=>"end"}
 						      ]
 			}
 	    end
