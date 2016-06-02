@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   #delete 'unjoin/:grupo_id' => 'registros#eliminar', :via => :delete
   get 'unjoin' => 'registros#eliminar' , as: :unjoin
   get 'delete_images' => 'registros#eliminar_imagenes' , as: :delete_images
+  delete 'registros/:id/delete' => 'registros#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   get 'perfils/:id/:nombre' => 'perfils#edit' , as: :editar_perfil

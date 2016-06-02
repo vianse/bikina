@@ -715,6 +715,7 @@ var Servicios = React.createClass({
               var i = "http://res.cloudinary.com/vianse/" + object.img
               var h = "/registros/" + object.id +"/"+ object.titulo
               var j = "/registros/" + object.id +"/edit?clave=" + clave
+              var k = "/registros/" + object.id +"/delete?clave=" + clave
 
                if (<%= @usuario %> == object.user_id){
                    if (object.recomendado == "si"){
@@ -729,7 +730,7 @@ var Servicios = React.createClass({
                           <td>Visitas {object.countclicks}</td>
                           
                           <td>
-                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
+                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={k}>Eliminar</a>
                           </td>
                             </tr>
                     }
@@ -749,7 +750,7 @@ var Servicios = React.createClass({
                                <a href={j}>Editar</a>
                                </td>
                                <td>
-                               <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
+                               <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={k}>Eliminar</a>
                                </td>
                              </tr>
                       }
