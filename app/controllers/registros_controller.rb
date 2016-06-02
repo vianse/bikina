@@ -117,6 +117,10 @@ class RegistrosController < ApplicationController
     #   end
     # end
   end
+  def recomienda
+    @registro = Registro.new
+    @grupo = Grupo.new
+  end
 
   # DELETE /registros/1
   # DELETE /registros/1.json
@@ -136,6 +140,6 @@ class RegistrosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registro_params
-      params.require(:registro).permit(:titulo, :descripcion, :direccion, :telefono1,:costo, :correo, :sitioweb, :logo, :categoria, :user_id,:grupo_id,:countclicks, :descripcionlarga)
+      params.require(:registro).permit(:titulo, :descripcion, :direccion, :telefono1,:costo, :correo, :sitioweb, :logo, :categoria, :user_id,:grupo_id,:countclicks, :descripcionlarga,:recomendado)
     end
 end

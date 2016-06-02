@@ -412,6 +412,8 @@ td.blanco:hover{
 
                                       <a href="unjoin?clave=<%= params[:clave]%>" class="btn btn-success boton">Ya no quiero este directorio</a>
 
+                                      <a href="recomienda?clave=<%= params[:clave]%>" class="btn btn-success boton">Recomienda un producto o servicio</a>
+
                                         <div class="panel-heading">
                                             <h4 class="panel-title"> Directorio de servicios <%= @name %>
                                               
@@ -715,43 +717,74 @@ var Servicios = React.createClass({
               var j = "/registros/" + object.id +"/edit?clave=" + clave
 
                if (<%= @usuario %> == object.user_id){
-                return <tr>
-                        
-                        <td>
-                        <img src={i}   alt="" className="media-object img-circle" width="40" height="40" /></td>
-                        <td><a href={h}>{object.titulo}</a></td>
-                        <td>{object.descripcion}</td>
-                        <td>{object.telefono1}</td>
-                        <td>{object.correo}</td>
-                        <td>Visitas {object.countclicks}</td>
-                        <td>
-                          <a href={j}>Editar</a>
-                        </td>
-                        <td>
-                          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
-                        </td>
-                      
-                     </tr>
+                   if (object.recomendado == "si"){
+                      return <tr>
+                          <td>
+                          <img src={object.img} alt="" className="media-object img-circle" width="40" height="40" />
+                          </td>
+                          <td><a href={h}>{object.titulo}</a></td>
+                          <td>{object.descripcion}</td>
+                          <td>{object.telefono1}</td>
+                          <td>{object.correo}</td>
+                          <td>Visitas {object.countclicks}</td>
+                          
+                          <td>
+                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
+                          </td>
+                            </tr>
+                    }
+                    else
+                    {
+                      if (object.recomendado == "no"){
+                        return <tr>
+                               <td>
+                                <img src={i}   alt="" className="media-object img-circle" width="40" height="40" />
+                               </td>
+                               <td><a href={h}>{object.titulo}</a></td>
+                               <td>{object.descripcion}</td>
+                               <td>{object.telefono1}</td>
+                               <td>{object.correo}</td>
+                               <td>Visitas {object.countclicks}</td>
+                               <td>
+                               <a href={j}>Editar</a>
+                               </td>
+                               <td>
+                               <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href={j}>Eliminar</a>
+                               </td>
+                             </tr>
+                      }
 
+                    }
                }
-               else
-               {
-
-                return <tr>
-                        <td><img src={i}   alt="" className="media-object img-circle" width="40" height="40" /></td>
-                        <td><a href={h}>{object.titulo}</a></td>
-                        <td>{object.descripcion}</td>
-                        <td>{object.telefono1}</td>
-                        <td>{object.correo}</td>
-                        <td>Visitas {object.countclicks}</td>
-                        
-
-                     </tr>
-
+               else{
+                if (object.recomendado == "si"){
+                   return <tr>
+                            <td>
+                            <img src={object.img} alt="" className="media-object img-circle" width="40" height="40" />
+                            </td>     
+                            <td><a href={h}>{object.titulo}</a></td>
+                            <td>{object.descripcion}</td>
+                            <td>{object.telefono1}</td>
+                            <td>{object.correo}</td>
+                            <td>Visitas {object.countclicks}</td>
+                          </tr>
+                 }
+                 else
+                 {
+                   return <tr>
+                          <td>
+                              <img src={i}   alt="" className="media-object img-circle" width="40" height="40" />
+                          </td>
+                          <td><a href={h}>{object.titulo}</a></td>
+                          <td>{object.descripcion}</td>
+                          <td>{object.telefono1}</td>
+                          <td>{object.correo}</td>
+                          <td>Visitas {object.countclicks}</td>
+                         </tr>
                }
-              
+              }
                            
-              }); 
+        }); 
 
               return <div>
                 <CampoBusquedaServicios value={this.state.value} cambio={this.handleChange}/>

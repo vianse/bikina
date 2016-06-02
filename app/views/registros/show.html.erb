@@ -436,12 +436,16 @@
                         <% if @registro.logo? %>
                           <img src="<%= @registro.logo %>" alt="">
                           <% else %>
-                          <img src="http://dummyimage.com/600x400/b0b0b0/fcfcfc&text=Sube+una+imagen" alt="">
+                          <img src="http://dummyimage.com/600x400/380f38/ffffff&text=bikina" alt="">
                           <% end %>
                       </div>
                       <div class="widget-blog-author">
                           <div class="widget-blog-author-image">
+                            <% if @registro.recomendado == "no" %>
                               <img src="http://res.cloudinary.com/vianse/<%= Perfil.where(:user_id => @registro.user_id).pluck(:photo).first%>" alt="">
+                              <% else %>
+                              <img src="http://dummyimage.com/600x400/380f38/ffffff&text=b" alt="">
+                              <% end %>
                           </div>
                           <div class="widget-blog-author-info">
                               <h5 class="m-t-0 m-b-1"><%= @registro.titulo %></h5>
@@ -455,21 +459,36 @@
                             <a id="more" class="btn" href="#">ver + </a>
                           <% else %>
                           <% end %>
+                           <% if @registro.direccion.present? %>
                           <p>Direccion:
                             <%= @registro.direccion %>
                           </p>
+                           <% else %>
+                          <% end %>
+                           <% if @registro.telefono1.present? %>
                           <p>Telefono:
                             <%= @registro.telefono1 %>
                           </p>
+                          <% else %>
+                          <% end %>
+                          <% if @registro.costo.present? %>
                           <p>Costo:
                             <%= @registro.costo %>
                           </p>
+                          <% else %>
+                          <% end %>
+                           <% if @registro.correo.present? %>
                           <p>Correo:
                             <%= @registro.correo %>
                           </p>
+                          <% else %>
+                          <% end %>
+                          <% if @registro.sitioweb.present? %>
                           <p>Sitio web:
                             <a href="<%= @registro.sitioweb %>"><%= @registro.sitioweb %></a>
                           </p>
+                          <% else %>
+                          <% end %>
                       </div>
                   </div>
                   <!-- end widget -->
@@ -662,8 +681,8 @@
   <!-- ================== END BASE JS ================== -->
   
   <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-     <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
-    <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732638/apps.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447733386/jquery.slimscroll.min.js"></script>
+  <script src="https://res.cloudinary.com/dnubgpeun/raw/upload/v1447732638/apps.js"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->
 
 

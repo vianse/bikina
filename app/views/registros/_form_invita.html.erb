@@ -320,7 +320,46 @@ td.blanco:hover{
         <div id="somedialog" class="dialog">
           <div class="dialog__overlay"></div>
           <div class="dialog__content">
+            <h2>Necesitas un directorio vecinal?</h2>
+            <p></p>
             
+            <%= form_for(@grupo) do |f| %>
+                <% if @grupo.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@grupo.errors.count, "error") %> prohibited this grupo from being saved:</h2>
+
+                    <ul>
+                    <% @grupo.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.label "Escribenos brevemente el nombre que quieres para tu directorio" %><br>
+                  <%= f.text_field :nombre ,:required => true%>
+                </div>
+                <div class="field">
+                  <%= f.label "Escribenos una descripción breve para tu directorio" %><br>
+                  <%= f.text_field :descripcion,:required => true %>
+                </div>
+                <div class="field">
+                  <%= f.label "Ingresa el Código Postal donde sera visto" %><br>
+                  <%= f.text_field :cp,:required => true %>
+                </div>
+                <div class="field">
+                  <%= f.hidden_field :user_id, :value => current_user.id %>
+                </div>
+                <div class="field">
+                  <%= f.hidden_field :clave, :value => rand(5..100000000) %>
+                </div>
+                <p>En breve daramos de alta tu directorio</p>
+                <div class="actions">
+                  <%= f.submit "Enviar", :class=>"action" %>
+                  
+                </div>
+              <% end %>
             <div>
           </div>
         </div>
@@ -338,7 +377,7 @@ td.blanco:hover{
                <div class="panel panel-inverse">
                             <div class="panel-body">
                                 <div class="row"> 
-                                    <h2>Publicar Servicio o Producto</h2>
+                                    <h2>Recomienda un producto o servicio</h2>
                                     <%= form_for(@registro) do |f| %>
                                           <% if @registro.errors.any? %>
                                             <div id="error_explanation">
@@ -353,57 +392,51 @@ td.blanco:hover{
                                           <% end %>
 
                                           <div class="field">
-                                    
-                                            <%= f.hidden_field :titulo, :value=> Perfil.where(:user_id => current_user.id).pluck(:nombre) %>
+                                            <label>Escribe el nombre del vecino</label><br>
+                                            <%= f.text_field :titulo, :value=> "", :class=>"form-control",:placeholder => "eje. Juan Sanchez", :required => true %>
                                           </div>
                                           <div class="field">
-                                            <label>Escribe la descripción corta de tu producto, servicio o habilidad </label><br>
-                                            <%= f.text_field :descripcion, :class=>"form-control",:placeholder => "eje. Jardinería", :required => true%>
+                                            <label>Escribe una la descripción de su producto, servicio o habilidad </label><br>
+                                            <%= f.text_field :descripcion, :class=>"form-control",:placeholder => "eje. Plomero", :required => true%>
                                           </div>
                                           <div class="field">
                                             <label>Escribe la descripción larga de tu producto, servicio o habilidad </label><br>
-                                            <%= f.text_area :descripcionlarga, :id => "descripcionlarga", cols: 20, rows: 10, :class=>"form-control" ,:required => true, :placeholder => "Ingresa una descripcion de tu servicio o producto"%>
+                                            <%= f.text_area :descripcionlarga, :id => "descripcionlarga", cols: 20, rows: 10, :class=>"form-control" ,:required => true, :placeholder => "Exelente Plomero 100% recomendable"%>
                                             
                                           </div>
+                                      
                                           <div class="field">
-                                            <%= f.label "Dirección de contacto" %><br>
-                                            <%= f.text_field :direccion, :class=>"form-control",:placeholder => "Av. Guillermo Camarena No.8", :readonly => true %>
-                                          </div>
-                                          <div class="field">
-                                            <%= f.label "Teléfono de contacto" %><br>
+                                            <%= f.label "Teléfono del vecino a recomendar" %><br>
                                             <%= f.text_field :telefono1,:class=>"form-control",:placeholder => "5555555555", :required => true %>
                                           </div>
                                           <div class="field">
                                             <%= f.hidden_field :grupo_id, :value=> params[:clave] %>
                                           </div>
-                                          <div class="field">
-                                            <%= f.label "Precio del producto o servicio" %><br>
-                                            <%= f.text_field :costo,:class=>"form-control",:placeholder => "50$ por Jardín trasero, 45$ por Jardín delantero." %>
-                                          </div>
-                                          <div class="field">
+                                           <div class="field">
                                             
-                                            <%= f.hidden_field :correo,:value => current_user.email %>
+                                            <%= f.hidden_field :recomendado,:value => "si" %>
+                                          </div>
+                        
+                                          <div class="field">
+                                             <%= f.label "Email del vecino o persona a recomendar (opcional)" %><br>
+                                            <%= f.text_field :correo,:value => "" %>
                                           </div>
                                           <div class="field">
-                                            <%= f.label "Ingresa tu sitio web o pagina facebook" %><br>
+                                            <%= f.label "Sitio web o pagina facebook (opcional)" %><br>
                                             <%= f.text_field :sitioweb,:class=>"form-control",:placeholder => "http://facebook.com/mipagina" %>
-                                          </div>
-                                          <div class="field">
-                                          <h5>Cambia la imagen de tu publicación</h5>
-                                          <%= f.hidden_field :logo %>
-                                          <%= f.file_field :logo,:class => 'form-control ' %>
-                                          <%= f.hidden_field :remote_logo_url %>         
-                                        </div>
-                                         <div class="field">
-                                            
-                                            <%= f.hidden_field :recomendado,:value => "no" %>
                                           </div>
 
                                           <div class="field">
                                             <%= f.hidden_field :user_id, :value => current_user.id %>
                                           </div>
+                                          <div class="field">
+                                          <h5>Imagen para tu publicación</h5>
+                                          <%= f.hidden_field :logo %>
+                                          <%= f.file_field :logo,:class => 'form-control ' %>
+                                          <%= f.hidden_field :remote_logo_url %>         
+                                        </div>
                                           <div class="actions">
-                                            <%= f.submit "Guardar",:class=> "boton" %>
+                                            <%= f.submit "Publicar",:class=> "boton" %>
                                           </div>
                                         <% end %>    
                                     

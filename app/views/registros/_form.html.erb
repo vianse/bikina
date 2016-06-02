@@ -401,7 +401,7 @@ td.blanco:hover{
                                           </div>
                                           <div class="field">
                                             <label>Escribe la descripción larga de tu producto, servicio o habilidad </label><br>
-                                            <%= f.text_area :descripcionlarga, :id => "descripcionlarga", cols: 20, rows: 10, :class=>"form-control" ,:required => true, :placeholder => "Ingresa una descripcion de tu servicio o producto"%>
+                                            <%= f.text_area :descripcionlarga, :id => "descripcionlarga", cols: 20, rows: 10, :class=>"form-control" ,:required => true, :placeholder => "Ingresa una descripción de tu servicio o producto"%>
                                             
                                           </div>
                                           <div class="field">
@@ -424,8 +424,12 @@ td.blanco:hover{
                                             <%= f.hidden_field :correo,:value => current_user.email %>
                                           </div>
                                           <div class="field">
-                                            <%= f.label "Ingresa tu sitio web o pagina facebook" %><br>
-                                            <%= f.text_field :sitioweb,:class=>"form-control",:placeholder => "http://facebook.com/mipagina" %>
+                                            
+                                            <%= f.hidden_field :recomendado,:value => "no" %>
+                                          </div>
+                                          <div class="field">
+                                            <%= f.label "Ingresa tu sitio web o página facebook" %><br>
+                                            <%= f.text_field :sitioweb,:class=>"form-control",:placeholder => "http://facebook.com/mipágina" %>
                                           </div>
 
                                           <div class="field">
