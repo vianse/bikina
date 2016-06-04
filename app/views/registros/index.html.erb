@@ -716,7 +716,7 @@ var Servicios = React.createClass({
               var h = "/registros/" + object.id +"/"+ object.titulo
               var j = "/registros/" + object.id +"/edit?clave=" + clave
               var k = "/registros/" + object.id +"/delete?clave=" + clave
-
+              alert(object.descripcion);
                if (<%= @usuario %> == object.user_id){
                    if (object.recomendado == "si"){
                       return <tr>
