@@ -18,8 +18,7 @@ class Api::V1::ServicioAllController <ApplicationController
 
 
 				}
-			end
-			if a.recomendado=="no"
+			else
 				{
 					:img => Perfil.where(:user_id => a.user_id).pluck(:photo).first,
 					:titulo => Perfil.where(:user_id => a.user_id).pluck(:nombre).first,

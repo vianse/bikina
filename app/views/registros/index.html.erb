@@ -662,8 +662,8 @@ var Directorios = React.createClass({
 
 var clave = getUrlParameter('clave');
 var pagina = getUrlParameter('page');
-var urls = "api/v1/servicios?q="
-var urla = "api/v1/servicio_all?clave="
+var urls = "/api/v1/servicios?q="
+var urla = "/api/v1/servicio_all?clave="
 var Servicios = React.createClass({
     componentDidMount: function() {
       $.ajax({
@@ -716,7 +716,7 @@ var Servicios = React.createClass({
               var h = "/registros/" + object.id +"/"+ object.titulo
               var j = "/registros/" + object.id +"/edit?clave=" + clave
               var k = "/registros/" + object.id +"/delete?clave=" + clave
-              alert(object.descripcion);
+
                if (<%= @usuario %> == object.user_id){
                    if (object.recomendado == "si"){
                       return <tr>
